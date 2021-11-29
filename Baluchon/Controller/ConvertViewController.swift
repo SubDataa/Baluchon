@@ -13,11 +13,21 @@ class ConvertViewController: UIViewController {
 let convert = Currency()
     override func viewDidLoad() {
         super.viewDidLoad()
-        convert.getCurrency()
+        
+        
         // Do any additional setup after loading the view.
     }
     
 
+    @IBOutlet weak var TextField: UITextField!
+    
+    @IBAction func ButtonConvert(_ sender: Any) {
+        if let text = TextField.text {
+            convert.entryAmount = text
+        }
+        convert.getCurrency()
+    }
+    
     /*
     // MARK: - Navigation
 
