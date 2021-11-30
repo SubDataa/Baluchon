@@ -6,24 +6,40 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class WeatherViewController: UIViewController {
-
+class WeatherViewController: UIViewController, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
+    let weather = WeatherService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }  
+    }
+ 
+    @objc func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        weather.latitude = "\(locValue.latitude)"
+        weather.longitude = "\(locValue.longitude)"
+        weather.getWeather { (data) in
+            self.temperatureText.text = "\(self.weather.temperatureC) °C"
+            self.cityText.text = "\(self.weather.currentPosition)"
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    @IBOutlet weak var cityText: UILabel!
+    @IBOutlet weak var temperatureText: UILabel!
+    
+    
 }
+    
