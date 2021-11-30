@@ -55,7 +55,7 @@
                                 <rect key="frame" x="123" y="128" width="168" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-eJ-Tpu">
                                 <rect key="frame" x="174" y="186" width="67" height="31"/>
@@ -97,7 +97,7 @@
                         <viewLayoutGuide key="safeArea" id="voF-XM-1XC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Translate" selectedImage="translate24x24" id="5Fa-Zx-VMb"/>
+                    <tabBarItem key="tabBarItem" title="Translate" image="translate24x24" selectedImage="translate24x24" id="5Fa-Zx-VMb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyK-p8-SFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
