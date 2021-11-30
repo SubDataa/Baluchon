@@ -66,6 +66,13 @@
                                     <action selector="ButtonConvert:" destination="Tsa-mA-TCo" eventType="touchUpInside" id="oAP-yd-qVr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resultat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-h8-n6j">
+                                <rect key="frame" x="55" y="249" width="305" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6VF-Vt-mf7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,6 +80,7 @@
                     <tabBarItem key="tabBarItem" title="Convert" image="Euro24x24" id="Llr-Ag-L8c"/>
                     <connections>
                         <outlet property="TextField" destination="DXM-yY-Tf0" id="gsj-t2-987"/>
+                        <outlet property="result" destination="a8H-h8-n6j" id="rkd-4H-oJS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u43-e1-mrC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -7,23 +7,43 @@
 
 import Foundation
 
-class Currency {
-  private let fixerURL = URL(string: "http://data.fixer.io/api/convert")!
-  var entryAmount = ""
+struct Datas: Codable {
+    var result: Float
     
-  func getCurrency() {
-        var request = URLRequest(url: fixerURL)
-        request.httpMethod = "POST"
-        let token = "?access_key=b5a0f33174f001702c59bee602752aa3"
-        let currencyFrom = "&from=GBP"
-        let currencyTo = "&to=JPY"
-        let amount = "&amount="
-        let body = "\(token)" + "\(currencyFrom)" + "\(currencyTo)" + "\(amount)" + "\(entryAmount)"
-        request.httpBody = body.data(using: .utf8)
-      print(body)
-    }
-    
-    
+}
 
+class Currency {
+  
+  var entryAmount = ""
+  var convertResult = ""
+    
+  func getCurrency()  {
+      let currencyFrom = "from=USD"
+      let currencyTo = "&to=EUR"
+      let amount = "&amount="
+      let exchangerateURL = URL(string: "https://api.exchangerate.host/convert?" + "\(currencyFrom)" + "\(currencyTo)" + "\(amount)" + "\(entryAmount)")!
+     var request = URLRequest(url: exchangerateURL)
+      request.httpMethod = "GET"
+      print(exchangerateURL)
+      
+      let session = URLSession(configuration: .default)
+      let task = session.dataTask(with: request) { (data, response, error) in
+          if let data = data, error == nil {
+                 if let response = response as? HTTPURLResponse, response.statusCode == 200 {
+                     if let responseJSON = try? JSONDecoder().decode(Datas.self, from: data){
+                         print(responseJSON)
+                         self.convertResult = "\(responseJSON)"
+                     }
+                       
+                        
+
+                 }
+             }
+         
+      }
+      task.resume()
+    
+    
+  }
     
 }
