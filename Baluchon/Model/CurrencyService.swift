@@ -12,7 +12,7 @@ struct Datas: Codable {
     
 }
 
-class Currency {
+class CurrencyService {
     
     var entryAmount = ""
     var convertResult = ""

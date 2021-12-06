@@ -10,7 +10,7 @@ import UIKit
 class ConvertViewController: UIViewController {
 
     
-let convert = Currency()
+let convert = CurrencyService()
     //
     override func viewDidLoad() {
         super.viewDidLoad()

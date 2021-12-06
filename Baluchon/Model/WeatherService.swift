@@ -66,8 +66,8 @@ class WeatherService {
     var latitude = ""
     var temperatureK = 0.0
     var temperatureC = 0
-    var currentPosition = ""
-    
+    var currentCity = ""
+    var weatherIcon = ""
     
     func getWeather(completionHandler: @escaping (Data?) -> Void)  {
         let lat = "lat="
@@ -84,11 +84,13 @@ class WeatherService {
                 if let data = data, error == nil {
                     if let response = response as? HTTPURLResponse, response.statusCode == 200 {
                         if let responseJSON = try? JSONDecoder().decode(DatasWeather.self, from: data){
-                            print(responseJSON.main.temp)
-                            print(responseJSON.weather)
                             self.temperatureC = Int(responseJSON.main.temp - 273.15)
-                            print(self.temperatureC)
-                            self.currentPosition = responseJSON.name
+                            self.currentCity = responseJSON.name
+                            if let weatherIcon = responseJSON.weather.first?.icon {
+                                self.weatherIcon = weatherIcon
+                                print(self.weatherIcon)
+                            }
+                           
                             completionHandler(data)
                         }
                     }
@@ -98,5 +100,5 @@ class WeatherService {
         task.resume()
     }
     
-    
+  
 }

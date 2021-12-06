@@ -19,7 +19,7 @@
 		633C124D2755056E006CA6D7 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C124C2755056E006CA6D7 /* TranslateViewController.swift */; };
 		633C124F275505D1006CA6D7 /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C124E275505D1006CA6D7 /* ConvertViewController.swift */; };
 		633C1253275507A0006CA6D7 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1252275507A0006CA6D7 /* WeatherViewController.swift */; };
-		633C125827550A00006CA6D7 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C125727550A00006CA6D7 /* Currency.swift */; };
+		633C125827550A00006CA6D7 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C125727550A00006CA6D7 /* CurrencyService.swift */; };
 		63E2AEFF27565A35002A1CB4 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2AEFE27565A35002A1CB4 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		633C124C2755056E006CA6D7 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		633C124E275505D1006CA6D7 /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		633C1252275507A0006CA6D7 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		633C125727550A00006CA6D7 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		633C125727550A00006CA6D7 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		63E2AEFE27565A35002A1CB4 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,7 +140,7 @@
 		633C125427550965006CA6D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				633C125727550A00006CA6D7 /* Currency.swift */,
+				633C125727550A00006CA6D7 /* CurrencyService.swift */,
 				63E2AEFE27565A35002A1CB4 /* WeatherService.swift */,
 			);
 			path = Model;
@@ -303,7 +303,7 @@
 				633C124D2755056E006CA6D7 /* TranslateViewController.swift in Sources */,
 				633C124F275505D1006CA6D7 /* ConvertViewController.swift in Sources */,
 				633C121D275503A1006CA6D7 /* AppDelegate.swift in Sources */,
-				633C125827550A00006CA6D7 /* Currency.swift in Sources */,
+				633C125827550A00006CA6D7 /* CurrencyService.swift in Sources */,
 				633C121F275503A1006CA6D7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
