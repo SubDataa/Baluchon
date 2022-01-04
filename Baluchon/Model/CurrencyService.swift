@@ -8,8 +8,7 @@
 import Foundation
 
 struct Datas: Codable {
-    var result: Float
-    
+    var result: Float 
 }
 
 class CurrencyService {
