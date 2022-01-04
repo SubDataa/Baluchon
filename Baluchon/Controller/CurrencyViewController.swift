@@ -14,7 +14,7 @@ let convert = CurrencyService()
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        overrideUserInterfaceStyle = .dark
 }
     
     @IBOutlet weak var result: UILabel!

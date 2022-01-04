@@ -20,6 +20,9 @@
 		633C1253275507A0006CA6D7 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1252275507A0006CA6D7 /* WeatherViewController.swift */; };
 		633C125827550A00006CA6D7 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C125727550A00006CA6D7 /* CurrencyService.swift */; };
 		635FAC7127849F68004D2218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635FAC7027849F68004D2218 /* Assets.xcassets */; };
+		63B3172C2784A793006FD977 /* coolvetica rg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63B3172B2784A793006FD977 /* coolvetica rg.otf */; };
+		63B3172E2784A8D2006FD977 /* theboldfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63B3172D2784A8D2006FD977 /* theboldfont.ttf */; };
+		63B317302784A957006FD977 /* LEMONMILK-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63B3172F2784A957006FD977 /* LEMONMILK-Bold.otf */; };
 		63E2AEFF27565A35002A1CB4 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2AEFE27565A35002A1CB4 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +61,9 @@
 		633C1252275507A0006CA6D7 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		633C125727550A00006CA6D7 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		635FAC7027849F68004D2218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63B3172B2784A793006FD977 /* coolvetica rg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolvetica rg.otf"; sourceTree = "<group>"; };
+		63B3172D2784A8D2006FD977 /* theboldfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theboldfont.ttf; sourceTree = "<group>"; };
+		63B3172F2784A957006FD977 /* LEMONMILK-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LEMONMILK-Bold.otf"; sourceTree = "<group>"; };
 		63E2AEFE27565A35002A1CB4 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,9 @@
 		633C121B275503A1006CA6D7 /* Baluchon */ = {
 			isa = PBXGroup;
 			children = (
+				63B3172B2784A793006FD977 /* coolvetica rg.otf */,
+				63B3172F2784A957006FD977 /* LEMONMILK-Bold.otf */,
+				63B3172D2784A8D2006FD977 /* theboldfont.ttf */,
 				633C125627550979006CA6D7 /* Controller */,
 				633C125527550971006CA6D7 /* View */,
 				633C125427550965006CA6D7 /* Model */,
@@ -272,7 +281,10 @@
 			files = (
 				633C1229275503A2006CA6D7 /* LaunchScreen.storyboard in Resources */,
 				635FAC7127849F68004D2218 /* Assets.xcassets in Resources */,
+				63B3172C2784A793006FD977 /* coolvetica rg.otf in Resources */,
+				63B317302784A957006FD977 /* LEMONMILK-Bold.otf in Resources */,
 				633C1224275503A1006CA6D7 /* Main.storyboard in Resources */,
+				63B3172E2784A8D2006FD977 /* theboldfont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

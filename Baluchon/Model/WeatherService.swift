@@ -68,6 +68,7 @@ class WeatherService {
     var temperatureC = 0
     var currentCity = ""
     var weatherIcon = ""
+    var weatherDescription = ""
     
     func getWeather(completionHandler: @escaping (Data?) -> Void)  {
         let lat = "lat="
@@ -86,9 +87,11 @@ class WeatherService {
                    let responseJSON = try? JSONDecoder().decode(DatasWeather.self, from: data){
                     self.temperatureC = Int(responseJSON.main.temp - 273.15)
                     self.currentCity = responseJSON.name
-                    if let weatherIcon = responseJSON.weather.first?.icon {
+                    
+                    if let weatherIcon = responseJSON.weather.first?.icon, let weatherDescription = responseJSON.weather.first?.description  {
                         self.weatherIcon = weatherIcon
-                        print(self.weatherIcon)
+                        self.weatherDescription = weatherDescription
+                        
                     }
                     
                     completionHandler(data)

@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KOc-1E-Jli">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="theboldfont.ttf">
+            <string>TheBoldFont</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="B3V-og-r0w">
             <objects>
                 <tabBarController interfaceStyle="dark" id="KOc-1E-Jli" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f3a-ix-PDg">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="f3a-ix-PDg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
@@ -33,52 +38,100 @@
             <objects>
                 <viewController id="jij-bi-ww7" customClass="WeatherViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KjT-SZ-5Vc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ville" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onW-xM-fEd">
-                                <rect key="frame" x="111" y="245" width="193" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="world-map-g1b304249b_1280" translatesAutoresizingMaskIntoConstraints="NO" id="CcK-as-Oh6">
+                                <rect key="frame" x="-29" y="158" width="444" height="217"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onW-xM-fEd">
+                                <rect key="frame" x="58" y="51" width="270" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="avp-xb-Wco"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-Nb-Ak6">
-                                <rect key="frame" x="111" y="274" width="193" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="position" translatesAutoresizingMaskIntoConstraints="NO" id="S78-SA-gJx">
+                                <rect key="frame" x="15" y="44" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="59s-Rt-gmC"/>
+                                    <constraint firstAttribute="height" constant="35" id="Y5e-9e-5b8"/>
+                                    <constraint firstAttribute="width" secondItem="S78-SA-gJx" secondAttribute="height" multiplier="1:1" id="sLU-8G-vds"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AiL-Jt-IrX">
+                                <rect key="frame" x="65" y="189" width="245" height="105"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQu-tx-MM2">
+                                <rect key="frame" x="217" y="419" width="29" height="86"/>
+                                <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <color key="textColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pG7-TJ-6gY">
+                                <rect key="frame" x="70" y="331" width="235" height="22"/>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKy-Py-G0H">
-                                <rect key="frame" x="87" y="81" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AiL-Jt-IrX">
-                                <rect key="frame" x="87" y="81" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-Nb-Ak6">
+                                <rect key="frame" x="111.99999999999999" y="383" width="151.66666666666663" height="190.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190.5" id="isR-U8-LON"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="88"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mgu-Ru-6KD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="trailing" secondItem="lQu-tx-MM2" secondAttribute="trailing" constant="129" id="0g8-sY-T5n"/>
+                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="trailing" secondItem="BGw-Nb-Ak6" secondAttribute="trailing" constant="111.5" id="211-Bh-Io6"/>
+                            <constraint firstItem="CcK-as-Oh6" firstAttribute="centerX" secondItem="onW-xM-fEd" secondAttribute="centerX" id="4Zu-D8-bHR"/>
+                            <constraint firstItem="AiL-Jt-IrX" firstAttribute="top" secondItem="Mgu-Ru-6KD" secondAttribute="top" constant="145" id="8M2-ss-Tfw"/>
+                            <constraint firstItem="onW-xM-fEd" firstAttribute="top" secondItem="Mgu-Ru-6KD" secondAttribute="top" constant="7" id="9GX-ws-e5U"/>
+                            <constraint firstItem="AiL-Jt-IrX" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" constant="65" id="B3r-YU-kq1"/>
+                            <constraint firstItem="BGw-Nb-Ak6" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" constant="112" id="GGq-s5-QJt"/>
+                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="bottom" secondItem="BGw-Nb-Ak6" secondAttribute="bottom" constant="155.5" id="GRl-lQ-U1P"/>
+                            <constraint firstItem="CcK-as-Oh6" firstAttribute="top" secondItem="S78-SA-gJx" secondAttribute="bottom" constant="79" id="Gax-X6-ziX"/>
+                            <constraint firstItem="pG7-TJ-6gY" firstAttribute="top" secondItem="AiL-Jt-IrX" secondAttribute="bottom" constant="37" id="H0L-jW-zA5"/>
+                            <constraint firstItem="S78-SA-gJx" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" constant="15" id="Im0-Wn-8kd"/>
+                            <constraint firstItem="onW-xM-fEd" firstAttribute="leading" secondItem="S78-SA-gJx" secondAttribute="trailing" constant="8" id="KFm-8m-gH2"/>
+                            <constraint firstItem="CcK-as-Oh6" firstAttribute="leading" secondItem="KjT-SZ-5Vc" secondAttribute="leadingMargin" constant="-45" id="LxD-JV-b1H"/>
+                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="bottom" secondItem="AiL-Jt-IrX" secondAttribute="bottom" constant="435" id="Ody-7k-NYS"/>
+                            <constraint firstItem="pG7-TJ-6gY" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" constant="70" id="QbA-7K-Mtg"/>
+                            <constraint firstItem="S78-SA-gJx" firstAttribute="top" secondItem="Mgu-Ru-6KD" secondAttribute="top" id="SV6-F8-y0m"/>
+                            <constraint firstItem="lQu-tx-MM2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mgu-Ru-6KD" secondAttribute="leading" symbolic="YES" id="Ykm-ha-ZEb"/>
+                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="trailing" secondItem="AiL-Jt-IrX" secondAttribute="trailing" constant="65" id="baO-zA-LQe"/>
+                            <constraint firstItem="lQu-tx-MM2" firstAttribute="top" secondItem="AiL-Jt-IrX" secondAttribute="bottom" constant="125" id="e9B-ku-l61"/>
+                            <constraint firstItem="BGw-Nb-Ak6" firstAttribute="top" secondItem="CcK-as-Oh6" secondAttribute="bottom" constant="8" symbolic="YES" id="vRR-KZ-x2o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CcK-as-Oh6" secondAttribute="trailing" constant="-56" id="vfE-JQ-XFg"/>
+                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="trailing" secondItem="pG7-TJ-6gY" secondAttribute="trailing" constant="70" id="vyW-UZ-fdS"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weather" image="Sun24x24" id="aDU-Vz-bNv"/>
                     <connections>
                         <outlet property="cityText" destination="onW-xM-fEd" id="EBj-gW-53z"/>
                         <outlet property="temperatureText" destination="BGw-Nb-Ak6" id="xB1-ru-0kL"/>
+                        <outlet property="weatherDescription" destination="pG7-TJ-6gY" id="bgX-fL-345"/>
                         <outlet property="weatherIcon" destination="AiL-Jt-IrX" id="ZcW-XC-TBo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88O-c6-vLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.753623188406" y="897.99107142857133"/>
+            <point key="canvasLocation" x="1191.304347826087" y="897.32142857142856"/>
         </scene>
         <!--Convert-->
         <scene sceneID="TBQ-FQ-jY2">
             <objects>
                 <viewController id="Tsa-mA-TCo" customClass="ConvertViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oea-Cl-58P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXM-yY-Tf0">
@@ -122,12 +175,14 @@
             <objects>
                 <viewController id="fL7-Mn-I9V" customClass="TranslateViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FUv-Lv-pZi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="voF-XM-1XC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Translate" image="translate24x24" selectedImage="translate24x24" id="5Fa-Zx-VMb"/>
+                    <tabBarItem key="tabBarItem" title="Translate" image="translate24x24" selectedImage="translate24x24" id="5Fa-Zx-VMb">
+                        <color key="badgeColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyK-p8-SFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,7 +192,9 @@
     <resources>
         <image name="Euro24x24" width="24" height="24"/>
         <image name="Sun24x24" width="24" height="24"/>
+        <image name="position" width="96" height="96"/>
         <image name="translate24x24" width="24" height="24"/>
+        <image name="world-map-g1b304249b_1280" width="1280" height="640"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
