@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MapKit
+//import MapKit
 import CoreLocation
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
@@ -14,6 +14,11 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     let weather = WeatherService()
     var icon = ""
+    
+    
+    @IBOutlet weak var cityText: UILabel!
+    @IBOutlet weak var temperatureText: UILabel!
+    @IBOutlet weak var weatherIcon: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
         
     }
     
@@ -38,21 +44,13 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         icon = self.weather.weatherIcon
-        let url = URL(string: "https://openweathermap.org/img/w/" + "\(icon)" + ".png")!
-        
-            // Fetch Image Data
-            if let data = try? Data(contentsOf: url) {
-                // Create Image and Update Image View
-                weatherIcon.image = UIImage(data: data)
-            }
-        
+        weatherIcon.image = UIImage(named: "\(icon).png")
+            
     }
     
     
-    @IBOutlet weak var cityText: UILabel!
-    @IBOutlet weak var temperatureText: UILabel!
-    @IBOutlet weak var weatherIcon: UIImageView!
-    //http://openweathermap.org/img/w/ + .png
+   
+   
     
     
 }

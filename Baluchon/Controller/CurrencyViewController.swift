@@ -14,6 +14,7 @@ let convert = CurrencyService()
     //
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 }
     
     @IBOutlet weak var result: UILabel!

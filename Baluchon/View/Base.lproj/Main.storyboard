@@ -11,11 +11,12 @@
         <!--Tab Bar Controller-->
         <scene sceneID="B3V-og-r0w">
             <objects>
-                <tabBarController id="KOc-1E-Jli" sceneMemberID="viewController">
+                <tabBarController interfaceStyle="dark" id="KOc-1E-Jli" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f3a-ix-PDg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="jij-bi-ww7" kind="relationship" relationship="viewControllers" id="nfW-QZ-AxK"/>
@@ -137,6 +138,9 @@
         <image name="Euro24x24" width="24" height="24"/>
         <image name="Sun24x24" width="24" height="24"/>
         <image name="translate24x24" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

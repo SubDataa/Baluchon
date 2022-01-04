@@ -55,9 +55,9 @@ struct DatasWeather: Codable {
         let country : String
         let sunrise : Int
         let sunset : Int
-        }
+    }
     
-
+    
 }
 
 class WeatherService {
@@ -81,24 +81,24 @@ class WeatherService {
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
-                if let data = data, error == nil {
-                    if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                        if let responseJSON = try? JSONDecoder().decode(DatasWeather.self, from: data){
-                            self.temperatureC = Int(responseJSON.main.temp - 273.15)
-                            self.currentCity = responseJSON.name
-                            if let weatherIcon = responseJSON.weather.first?.icon {
-                                self.weatherIcon = weatherIcon
-                                print(self.weatherIcon)
-                            }
-                           
-                            completionHandler(data)
-                        }
+                if let data = data, error == nil, let response = response as? HTTPURLResponse,
+                   response.statusCode == 200,
+                   let responseJSON = try? JSONDecoder().decode(DatasWeather.self, from: data){
+                    self.temperatureC = Int(responseJSON.main.temp - 273.15)
+                    self.currentCity = responseJSON.name
+                    if let weatherIcon = responseJSON.weather.first?.icon {
+                        self.weatherIcon = weatherIcon
+                        print(self.weatherIcon)
                     }
+                    
+                    completionHandler(data)
                 }
+                
+                
             }
         }
         task.resume()
     }
     
-  
+    
 }
