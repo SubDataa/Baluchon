@@ -42,21 +42,18 @@ class WeatherService {
     
     // MARK: - API CONFIGURATION
     func getWeather(completionHandler: @escaping (Data?) -> Void)  {
-        let lat = "lat="
-        let lon = "&lon="
         let key = "&appid=b30e3845dbb1cb9ad75ce7da52752392"
-        let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?" + "\(lat)" + "\(latitude)" + "\(lon)" + "\(longitude)" + "\(key)")!
+        let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?" + "lat=" + "\(latitude)" + "&lon=" + "\(longitude)" + "\(key)")!
         var request = URLRequest(url: weatherURL)
         request.httpMethod = "GET"
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
                 if let data = data, error == nil, let response = response as? HTTPURLResponse,
                    response.statusCode == 200,
                    let responseJSON = try? JSONDecoder().decode(DatasWeather.self, from: data){
+                    DispatchQueue.main.async {
                     self.temperatureC = Int(responseJSON.main.temp - 273.15)
                     self.currentCity = responseJSON.name
-                    
                     if let weatherIcon = responseJSON.weather.first?.icon, let weatherDescription = responseJSON.weather.first?.description  {
                         self.weatherIcon = weatherIcon
                         self.weatherDescription = weatherDescription
@@ -66,6 +63,7 @@ class WeatherService {
             }
         }
         task.resume()
+   
     }
     
     
