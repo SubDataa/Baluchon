@@ -7,22 +7,24 @@
 
 import Foundation
 
+// MARK: - DECODE JSON
 struct DatasWeather: Codable {
     
     let coord : Coord
     let weather : [Weather]
     let main : Main
     let name : String
-   
+
     struct Coord : Codable {
         let lon : Double
         let lat : Double
     }
+
     struct Weather : Codable {
-        let main : String
         let description : String
         let icon : String
     }
+    
     struct Main : Codable {
         let temp : Double
     } 
@@ -30,6 +32,7 @@ struct DatasWeather: Codable {
 
 class WeatherService {
     
+    // MARK: - VARIABLE FOR API CALL
     var longitude = ""
     var latitude = ""
     var temperatureC = 0
@@ -37,6 +40,7 @@ class WeatherService {
     var weatherIcon = ""
     var weatherDescription = ""
     
+    // MARK: - API CONFIGURATION
     func getWeather(completionHandler: @escaping (Data?) -> Void)  {
         let lat = "lat="
         let lon = "&lon="

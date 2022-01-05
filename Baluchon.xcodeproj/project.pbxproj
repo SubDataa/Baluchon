@@ -115,9 +115,7 @@
 		633C121B275503A1006CA6D7 /* Baluchon */ = {
 			isa = PBXGroup;
 			children = (
-				63B3172B2784A793006FD977 /* coolvetica rg.otf */,
-				63B3172F2784A957006FD977 /* LEMONMILK-Bold.otf */,
-				63B3172D2784A8D2006FD977 /* theboldfont.ttf */,
+				63B847982785E6FC00A9F572 /* Fonts */,
 				633C125627550979006CA6D7 /* Controller */,
 				633C125527550971006CA6D7 /* View */,
 				633C125427550965006CA6D7 /* Model */,
@@ -173,6 +171,16 @@
 				633C124E275505D1006CA6D7 /* CurrencyViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		63B847982785E6FC00A9F572 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				63B3172B2784A793006FD977 /* coolvetica rg.otf */,
+				63B3172F2784A957006FD977 /* LEMONMILK-Bold.otf */,
+				63B3172D2784A8D2006FD977 /* theboldfont.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

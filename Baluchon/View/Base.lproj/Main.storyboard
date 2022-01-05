@@ -68,8 +68,8 @@
                                     <constraint firstAttribute="width" secondItem="AiL-Jt-IrX" secondAttribute="height" multiplier="374:189" id="D5N-65-bAn"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQu-tx-MM2">
-                                <rect key="frame" x="247.5" y="498" width="29" height="86"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQu-tx-MM2">
+                                <rect key="frame" x="232" y="498" width="0.0" height="0.0"/>
                                 <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="72"/>
                                 <color key="textColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -81,8 +81,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-Nb-Ak6">
-                                <rect key="frame" x="162.5" y="468" width="89" height="190.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-Nb-Ak6">
+                                <rect key="frame" x="207" y="468" width="0.0" height="190.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190.5" id="isR-U8-LON"/>
                                 </constraints>
@@ -123,6 +123,7 @@
                     <tabBarItem key="tabBarItem" title="Weather" image="Sun24x24" id="aDU-Vz-bNv"/>
                     <connections>
                         <outlet property="cityText" destination="onW-xM-fEd" id="EBj-gW-53z"/>
+                        <outlet property="degreeText" destination="lQu-tx-MM2" id="wwy-mE-xAm"/>
                         <outlet property="temperatureText" destination="BGw-Nb-Ak6" id="xB1-ru-0kL"/>
                         <outlet property="weatherDescription" destination="pG7-TJ-6gY" id="bgX-fL-345"/>
                         <outlet property="weatherIcon" destination="AiL-Jt-IrX" id="ZcW-XC-TBo"/>
@@ -140,24 +141,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXM-yY-Tf0">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXM-yY-Tf0">
                                 <rect key="frame" x="123" y="128" width="168" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-eJ-Tpu">
-                                <rect key="frame" x="174" y="186" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-eJ-Tpu">
+                                <rect key="frame" x="173.5" y="186" width="67" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="ButtonConvert:" destination="Tsa-mA-TCo" eventType="touchUpInside" id="oAP-yd-qVr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resultat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-h8-n6j">
-                                <rect key="frame" x="55" y="254" width="305" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-h8-n6j">
+                                <rect key="frame" x="55" y="254" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -165,6 +163,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6VF-Vt-mf7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DXM-yY-Tf0" firstAttribute="top" secondItem="6VF-Vt-mf7" secondAttribute="top" constant="84" id="IuR-rH-nLe"/>
+                            <constraint firstItem="a8H-h8-n6j" firstAttribute="top" secondItem="NlQ-eJ-Tpu" secondAttribute="bottom" constant="37" id="Q80-Qg-MHa"/>
+                            <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="oea-Cl-58P" secondAttribute="centerX" id="WCK-y4-9Ah"/>
+                            <constraint firstItem="a8H-h8-n6j" firstAttribute="leading" secondItem="6VF-Vt-mf7" secondAttribute="leading" constant="55" id="aB4-kK-AeJ"/>
+                            <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="NlQ-eJ-Tpu" secondAttribute="centerX" id="aGG-8I-NxX"/>
+                            <constraint firstItem="6VF-Vt-mf7" firstAttribute="bottom" secondItem="a8H-h8-n6j" secondAttribute="bottom" constant="538" id="fr3-e1-dU6"/>
+                            <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="DXM-yY-Tf0" secondAttribute="centerX" id="kXE-8X-1IC"/>
+                            <constraint firstItem="DXM-yY-Tf0" firstAttribute="leading" secondItem="6VF-Vt-mf7" secondAttribute="leading" constant="123" id="phk-fJ-vjd"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="Euro24x24" id="Llr-Ag-L8c"/>
                     <connections>
