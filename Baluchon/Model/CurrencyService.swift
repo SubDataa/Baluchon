@@ -11,8 +11,7 @@ struct Datas: Codable {
     var result: Float 
 }
 
-class CurrencyService {
-    
+class CurrencyService { 
     var entryAmount = ""
     var convertResult = ""
     
