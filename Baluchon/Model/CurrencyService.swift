@@ -31,8 +31,9 @@ class CurrencyService {
                 if let data = data, error == nil {
                     if let response = response as? HTTPURLResponse, response.statusCode == 200 {
                         if let responseJSON = try? JSONDecoder().decode(Datas.self, from: data){
-                            print(responseJSON)
-                            self.convertResult = "\(responseJSON.result)"
+                            
+                            let formatedResult = String(format:"%.2f", responseJSON.result)
+                            self.convertResult = formatedResult
                             completionHandler(data)
                         }
                     }
