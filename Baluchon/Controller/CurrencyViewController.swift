@@ -15,12 +15,14 @@ let convert = CurrencyService()
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
-        
+        TextField.layer.borderWidth = CGFloat(1.0)
+        TextField.layer.borderColor = UIColor.red.cgColor
 }
     
     @IBOutlet weak var result: UILabel!
     
     @IBOutlet weak var TextField: UITextField!
+    
     
     @IBAction func ButtonConvert(_ sender: Any) {
         if let text = TextField.text {

@@ -143,6 +143,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXM-yY-Tf0">
                                 <rect key="frame" x="123" y="128" width="168" height="34"/>
+                                <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
@@ -156,7 +157,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-h8-n6j">
                                 <rect key="frame" x="55" y="275" width="304" height="0.0"/>
-                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
