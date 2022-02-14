@@ -15,6 +15,7 @@ let convert = CurrencyService()
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
+        
 }
     
     @IBOutlet weak var result: UILabel!
@@ -25,7 +26,7 @@ let convert = CurrencyService()
         if let text = TextField.text {
             convert.entryAmount = text
             convert.getCurrency() { (data) in
-                self.result.text = self.convert.convertResult
+                self.result.text = "\(self.convert.convertResult)" + "$"
             }
                
         }
