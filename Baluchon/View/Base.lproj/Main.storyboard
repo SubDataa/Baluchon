@@ -141,26 +141,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="foreign-currency-exchange" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-bM-j1H">
-                                <rect key="frame" x="55" y="81" width="312" height="512"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="currency_background" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-bM-j1H">
+                                <rect key="frame" x="51" y="150.5" width="312" height="512"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="512" id="2XI-xu-aso"/>
                                     <constraint firstAttribute="width" constant="312" id="DbM-Y5-pEa"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXM-yY-Tf0">
-                                <rect key="frame" x="123" y="206" width="168" height="34"/>
+                                <rect key="frame" x="106" y="236" width="202" height="34"/>
                                 <color key="backgroundColor" red="0.1174166052" green="0.13809732890000001" blue="0.14726965210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Elh-ld-r5f"/>
+                                    <constraint firstAttribute="width" constant="202" id="fdl-mQ-Jq6"/>
+                                    <constraint firstAttribute="width" secondItem="DXM-yY-Tf0" secondAttribute="height" multiplier="101:17" id="y3X-JH-WEr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-h8-n6j">
-                                <rect key="frame" x="55" y="275" width="304" height="0.0"/>
-                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" image="convert" translatesAutoresizingMaskIntoConstraints="NO" id="Do9-Ms-sjq">
                                 <rect key="frame" x="15" y="44" width="35" height="35"/>
                                 <constraints>
@@ -172,7 +171,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST1-Ev-uVV">
                                 <rect key="frame" x="58" y="51" width="94" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="Ps6-uZ-LVX"/>
                                     <constraint firstAttribute="height" constant="22" id="zGs-Dz-agn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="22"/>
@@ -180,7 +178,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-eJ-Tpu">
-                                <rect key="frame" x="107" y="322" width="200" height="31"/>
+                                <rect key="frame" x="107" y="391" width="200" height="31"/>
                                 <color key="backgroundColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -189,24 +187,34 @@
                                     <action selector="ButtonConvert:" destination="Tsa-mA-TCo" eventType="touchUpInside" id="oAP-yd-qVr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-h8-n6j">
+                                <rect key="frame" x="106" y="322" width="202" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="1Kg-s8-NT0"/>
+                                    <constraint firstAttribute="width" secondItem="a8H-h8-n6j" secondAttribute="height" multiplier="101:15" id="8SY-LF-VNo"/>
+                                    <constraint firstAttribute="height" constant="30" id="q9W-sX-b9U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6VF-Vt-mf7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6VF-Vt-mf7" firstAttribute="bottom" secondItem="KiN-bM-j1H" secondAttribute="bottom" constant="220" id="4jc-U2-gvE"/>
-                            <constraint firstItem="NlQ-eJ-Tpu" firstAttribute="top" secondItem="a8H-h8-n6j" secondAttribute="bottom" constant="47" id="7io-iO-n4Z"/>
+                            <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="oea-Cl-58P" secondAttribute="centerX" id="68m-om-DZ1"/>
                             <constraint firstItem="ST1-Ev-uVV" firstAttribute="top" secondItem="6VF-Vt-mf7" secondAttribute="top" constant="7" id="IAn-Sh-gl0"/>
+                            <constraint firstItem="NlQ-eJ-Tpu" firstAttribute="top" secondItem="a8H-h8-n6j" secondAttribute="bottom" constant="39" id="Ld5-b2-WfS"/>
                             <constraint firstItem="Do9-Ms-sjq" firstAttribute="top" secondItem="6VF-Vt-mf7" secondAttribute="top" id="Lh7-8m-reP"/>
+                            <constraint firstItem="DXM-yY-Tf0" firstAttribute="top" secondItem="ST1-Ev-uVV" secondAttribute="bottom" constant="163" id="NCG-KL-SlD"/>
+                            <constraint firstItem="NlQ-eJ-Tpu" firstAttribute="centerY" secondItem="oea-Cl-58P" secondAttribute="centerY" id="Tgb-pu-rAi"/>
                             <constraint firstItem="Do9-Ms-sjq" firstAttribute="leading" secondItem="6VF-Vt-mf7" secondAttribute="leading" constant="15" id="Uho-7J-MIc"/>
-                            <constraint firstItem="6VF-Vt-mf7" firstAttribute="trailing" secondItem="ST1-Ev-uVV" secondAttribute="trailing" constant="262" id="VIF-bl-zOf"/>
-                            <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="oea-Cl-58P" secondAttribute="centerX" id="WCK-y4-9Ah"/>
-                            <constraint firstItem="6VF-Vt-mf7" firstAttribute="trailing" secondItem="KiN-bM-j1H" secondAttribute="trailing" constant="47" id="ZLw-af-fsx"/>
-                            <constraint firstItem="a8H-h8-n6j" firstAttribute="leading" secondItem="6VF-Vt-mf7" secondAttribute="leading" constant="55" id="aB4-kK-AeJ"/>
-                            <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="NlQ-eJ-Tpu" secondAttribute="centerX" id="aGG-8I-NxX"/>
-                            <constraint firstItem="DXM-yY-Tf0" firstAttribute="top" secondItem="ST1-Ev-uVV" secondAttribute="bottom" constant="133" id="fZj-HO-Gyp"/>
-                            <constraint firstItem="6VF-Vt-mf7" firstAttribute="bottom" secondItem="a8H-h8-n6j" secondAttribute="bottom" constant="538" id="fr3-e1-dU6"/>
-                            <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="DXM-yY-Tf0" secondAttribute="centerX" id="kXE-8X-1IC"/>
-                            <constraint firstItem="DXM-yY-Tf0" firstAttribute="leading" secondItem="6VF-Vt-mf7" secondAttribute="leading" constant="123" id="phk-fJ-vjd"/>
+                            <constraint firstItem="6VF-Vt-mf7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ST1-Ev-uVV" secondAttribute="trailing" id="VIF-bl-zOf"/>
+                            <constraint firstItem="NlQ-eJ-Tpu" firstAttribute="centerX" secondItem="oea-Cl-58P" secondAttribute="centerX" id="Znp-SQ-RPF"/>
+                            <constraint firstItem="KiN-bM-j1H" firstAttribute="centerY" secondItem="oea-Cl-58P" secondAttribute="centerY" id="byQ-0V-etT"/>
+                            <constraint firstItem="DXM-yY-Tf0" firstAttribute="centerX" secondItem="oea-Cl-58P" secondAttribute="centerX" id="ngF-BC-Paa"/>
+                            <constraint firstItem="ST1-Ev-uVV" firstAttribute="leading" secondItem="Do9-Ms-sjq" secondAttribute="trailing" constant="8" id="vFB-PX-L0X"/>
+                            <constraint firstItem="KiN-bM-j1H" firstAttribute="centerX" secondItem="oea-Cl-58P" secondAttribute="centerX" id="xzf-93-Cue"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="Euro24x24" id="Llr-Ag-L8c"/>
@@ -227,17 +235,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-XS-lRZ">
-                                <rect key="frame" x="77" y="184" width="260" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1174166052" green="0.13809732890000001" blue="0.14726965210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="0.0"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTu-oi-WLS">
-                                <rect key="frame" x="169" y="402" width="77" height="8"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="translate_background" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-lq-BCr">
+                                <rect key="frame" x="8" y="214.5" width="398" height="384"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="398" id="4ua-7y-K6z"/>
+                                    <constraint firstAttribute="width" secondItem="MdS-lq-BCr" secondAttribute="height" multiplier="199:192" id="SBe-iC-HXp"/>
+                                    <constraint firstAttribute="height" constant="384" id="bMk-aP-eec"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTu-oi-WLS">
+                                <rect key="frame" x="95" y="384" width="224" height="45"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="buttontranslate" title=""/>
                                 <connections>
@@ -255,17 +262,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJf-ez-lva">
-                                <rect key="frame" x="77" y="459" width="260" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJf-ez-lva">
+                                <rect key="frame" x="77" y="463" width="260" height="170"/>
                                 <color key="backgroundColor" red="0.1174166052" green="0.13809732890000001" blue="0.14726965210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="Qzv-zr-k7N"/>
+                                    <constraint firstAttribute="width" constant="260" id="ZfA-Uv-pw4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="0.0"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-XS-lRZ">
+                                <rect key="frame" x="77" y="180" width="260" height="170"/>
+                                <color key="backgroundColor" red="0.1174166052" green="0.13809732890000001" blue="0.14726965210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="BPI-ck-syu"/>
+                                    <constraint firstAttribute="height" constant="170" id="PLx-Hr-q8C"/>
+                                    <constraint firstAttribute="width" secondItem="gGC-XS-lRZ" secondAttribute="height" multiplier="26:17" id="vis-Vu-65n"/>
+                                </constraints>
+                                <color key="textColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="voF-XM-1XC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MdS-lq-BCr" firstAttribute="centerX" secondItem="FUv-Lv-pZi" secondAttribute="centerX" id="35g-6G-jn2"/>
+                            <constraint firstItem="MdS-lq-BCr" firstAttribute="centerY" secondItem="FUv-Lv-pZi" secondAttribute="centerY" id="4Wd-eh-B10"/>
+                            <constraint firstItem="zJf-ez-lva" firstAttribute="centerX" secondItem="FUv-Lv-pZi" secondAttribute="centerX" id="Jf5-vR-CUb"/>
+                            <constraint firstItem="hTu-oi-WLS" firstAttribute="centerX" secondItem="FUv-Lv-pZi" secondAttribute="centerX" id="Pyl-lv-O0m"/>
+                            <constraint firstItem="hTu-oi-WLS" firstAttribute="centerY" secondItem="FUv-Lv-pZi" secondAttribute="centerY" id="QIf-re-4AX"/>
+                            <constraint firstItem="hTu-oi-WLS" firstAttribute="top" secondItem="gGC-XS-lRZ" secondAttribute="bottom" constant="34" id="WCM-dc-8p5"/>
+                            <constraint firstItem="zJf-ez-lva" firstAttribute="top" secondItem="hTu-oi-WLS" secondAttribute="bottom" constant="34" id="d3J-xq-reF"/>
+                            <constraint firstItem="gGC-XS-lRZ" firstAttribute="centerX" secondItem="FUv-Lv-pZi" secondAttribute="centerX" id="pOb-Tp-BLk"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Translate" image="translate24x24" selectedImage="translate24x24" id="5Fa-Zx-VMb">
                         <color key="badgeColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -286,10 +319,11 @@
         <image name="buttonconvert" width="200" height="31"/>
         <image name="buttontranslate" width="200" height="31"/>
         <image name="convert" width="981" height="904"/>
-        <image name="foreign-currency-exchange" width="512" height="512"/>
+        <image name="currency_background" width="512" height="512"/>
         <image name="icontranslate" width="340" height="316"/>
         <image name="position" width="96" height="96"/>
         <image name="translate24x24" width="24" height="24"/>
+        <image name="translate_background" width="512" height="512"/>
         <image name="world-map-g1b304249b_1280" width="1280" height="640"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
