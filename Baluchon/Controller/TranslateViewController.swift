@@ -12,6 +12,12 @@ class TranslateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
+        textToTranslate.layer.borderWidth = CGFloat(1.0)
+        textToTranslate.layer.borderColor = UIColor.red.cgColor
+        textToTranslate.layer.cornerRadius = 10.0
+        textTranslate.layer.borderWidth = CGFloat(1.0)
+        textTranslate.layer.borderColor = UIColor.red.cgColor
+        textTranslate.layer.cornerRadius = 10.0
         // Do any additional setup after loading the view.
     }
     
