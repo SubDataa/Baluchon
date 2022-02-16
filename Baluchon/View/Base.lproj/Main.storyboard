@@ -141,9 +141,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="foreign-currency-exchange" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-bM-j1H">
-                                <rect key="frame" x="51" y="128" width="313" height="280"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="foreign-currency-exchange" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-bM-j1H">
+                                <rect key="frame" x="51" y="128" width="312" height="280"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXM-yY-Tf0">
                                 <rect key="frame" x="123" y="128" width="168" height="34"/>
@@ -157,19 +156,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="convert" translatesAutoresizingMaskIntoConstraints="NO" id="Do9-Ms-sjq">
-                                <rect key="frame" x="15" y="44" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" image="convert" translatesAutoresizingMaskIntoConstraints="NO" id="Do9-Ms-sjq">
+                                <rect key="frame" x="15" y="44" width="250" height="35"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Convert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST1-Ev-uVV">
-                                <rect key="frame" x="61" y="54" width="309" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST1-Ev-uVV">
+                                <rect key="frame" x="276" y="54" width="94" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="46q-VC-5sV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-eJ-Tpu">
-                                <rect key="frame" x="175" y="244" width="64" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-eJ-Tpu">
+                                <rect key="frame" x="175" y="204" width="64" height="34"/>
                                 <color key="backgroundColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -182,14 +182,24 @@
                         <viewLayoutGuide key="safeArea" id="6VF-Vt-mf7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6VF-Vt-mf7" firstAttribute="bottom" secondItem="KiN-bM-j1H" secondAttribute="bottom" constant="405" id="Ebg-ac-fnp"/>
+                            <constraint firstItem="KiN-bM-j1H" firstAttribute="centerX" secondItem="NlQ-eJ-Tpu" secondAttribute="centerX" id="Edf-88-rAP"/>
+                            <constraint firstItem="ST1-Ev-uVV" firstAttribute="leading" secondItem="Do9-Ms-sjq" secondAttribute="trailing" constant="11" id="Fgw-tR-89R"/>
+                            <constraint firstItem="KiN-bM-j1H" firstAttribute="leading" secondItem="6VF-Vt-mf7" secondAttribute="leading" constant="51" id="Gm4-oW-XHA"/>
+                            <constraint firstItem="KiN-bM-j1H" firstAttribute="top" secondItem="ST1-Ev-uVV" secondAttribute="bottom" constant="53" id="Hpa-Jt-H5a"/>
                             <constraint firstItem="DXM-yY-Tf0" firstAttribute="top" secondItem="6VF-Vt-mf7" secondAttribute="top" constant="84" id="IuR-rH-nLe"/>
                             <constraint firstItem="a8H-h8-n6j" firstAttribute="top" secondItem="NlQ-eJ-Tpu" secondAttribute="bottom" constant="37" id="Q80-Qg-MHa"/>
+                            <constraint firstItem="Do9-Ms-sjq" firstAttribute="top" secondItem="6VF-Vt-mf7" secondAttribute="top" id="TjG-J4-4hl"/>
+                            <constraint firstItem="6VF-Vt-mf7" firstAttribute="trailing" secondItem="ST1-Ev-uVV" secondAttribute="trailing" constant="44" id="V85-cp-ujJ"/>
                             <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="oea-Cl-58P" secondAttribute="centerX" id="WCK-y4-9Ah"/>
+                            <constraint firstItem="Do9-Ms-sjq" firstAttribute="leading" secondItem="6VF-Vt-mf7" secondAttribute="leading" constant="15" id="WLK-83-9Gc"/>
                             <constraint firstItem="a8H-h8-n6j" firstAttribute="leading" secondItem="6VF-Vt-mf7" secondAttribute="leading" constant="55" id="aB4-kK-AeJ"/>
                             <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="NlQ-eJ-Tpu" secondAttribute="centerX" id="aGG-8I-NxX"/>
                             <constraint firstItem="6VF-Vt-mf7" firstAttribute="bottom" secondItem="a8H-h8-n6j" secondAttribute="bottom" constant="538" id="fr3-e1-dU6"/>
                             <constraint firstItem="a8H-h8-n6j" firstAttribute="centerX" secondItem="DXM-yY-Tf0" secondAttribute="centerX" id="kXE-8X-1IC"/>
+                            <constraint firstItem="ST1-Ev-uVV" firstAttribute="top" secondItem="6VF-Vt-mf7" secondAttribute="top" constant="10" id="oBl-Mh-wMd"/>
                             <constraint firstItem="DXM-yY-Tf0" firstAttribute="leading" secondItem="6VF-Vt-mf7" secondAttribute="leading" constant="123" id="phk-fJ-vjd"/>
+                            <constraint firstItem="6VF-Vt-mf7" firstAttribute="bottom" secondItem="Do9-Ms-sjq" secondAttribute="bottom" constant="734" id="zfE-ni-NfQ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="Euro24x24" id="Llr-Ag-L8c"/>

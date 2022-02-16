@@ -16,8 +16,9 @@ class TranslateService {
     var convertedText = ""
     
     func getTranslate(completionHandler: @escaping (Data?) -> Void)  {
+        let escapedString = entryText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        let translateURL = URL(string: "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20220216T080826Z.1b9ba0311cd3c71f.8a22f524d47cda660fd58d6454fb34e7909fea53&lang=fr-en&text=" + "\(escapedString)")!
         
-        let translateURL = URL(string: "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20220216T080826Z.1b9ba0311cd3c71f.8a22f524d47cda660fd58d6454fb34e7909fea53&lang=fr-en&text=" + "\(entryText)")!
         var request = URLRequest(url: translateURL)
         request.httpMethod = "GET"
         let session = URLSession(configuration: .default)
