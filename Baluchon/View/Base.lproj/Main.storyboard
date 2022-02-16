@@ -141,20 +141,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="foreign-currency-exchange" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-bM-j1H">
+                                <rect key="frame" x="51" y="128" width="313" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXM-yY-Tf0">
                                 <rect key="frame" x="123" y="128" width="168" height="34"/>
                                 <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-eJ-Tpu">
-                                <rect key="frame" x="169.5" y="207" width="75.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Convert"/>
-                                <connections>
-                                    <action selector="ButtonConvert:" destination="Tsa-mA-TCo" eventType="touchUpInside" id="oAP-yd-qVr"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-h8-n6j">
                                 <rect key="frame" x="55" y="275" width="304" height="0.0"/>
                                 <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="28"/>
@@ -166,12 +162,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Convert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST1-Ev-uVV">
-                                <rect key="frame" x="58" y="50" width="94" height="22"/>
+                                <rect key="frame" x="61" y="54" width="309" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-eJ-Tpu">
+                                <rect key="frame" x="175" y="244" width="64" height="34"/>
+                                <color key="backgroundColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="ButtonConvert:" destination="Tsa-mA-TCo" eventType="touchUpInside" id="oAP-yd-qVr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6VF-Vt-mf7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -188,8 +194,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="Euro24x24" id="Llr-Ag-L8c"/>
                     <connections>
-                        <outlet property="TextField" destination="DXM-yY-Tf0" id="gsj-t2-987"/>
                         <outlet property="result" destination="a8H-h8-n6j" id="rkd-4H-oJS"/>
+                        <outlet property="textField" destination="DXM-yY-Tf0" id="gsj-t2-987"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u43-e1-mrC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -203,22 +209,50 @@
                     <view key="view" contentMode="scaleToFill" id="FUv-Lv-pZi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-XS-lRZ">
+                                <rect key="frame" x="77" y="286" width="260" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJf-ez-lva">
+                                <rect key="frame" x="77" y="554" width="260" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTu-oi-WLS">
+                                <rect key="frame" x="174" y="491" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="translateButton:" destination="fL7-Mn-I9V" eventType="touchUpInside" id="Y3B-yc-d8h"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="voF-XM-1XC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Translate" image="translate24x24" selectedImage="translate24x24" id="5Fa-Zx-VMb">
                         <color key="badgeColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="textToTranslate" destination="gGC-XS-lRZ" id="vCc-2N-OPn"/>
+                        <outlet property="textTranslate" destination="zJf-ez-lva" id="d2I-rs-Khe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyK-p8-SFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="161"/>
+            <point key="canvasLocation" x="1192.753623188406" y="160.71428571428569"/>
         </scene>
     </scenes>
     <resources>
         <image name="Euro24x24" width="24" height="24"/>
         <image name="Sun24x24" width="24" height="24"/>
         <image name="convert" width="981" height="904"/>
+        <image name="foreign-currency-exchange" width="512" height="512"/>
         <image name="position" width="96" height="96"/>
         <image name="translate24x24" width="24" height="24"/>
         <image name="world-map-g1b304249b_1280" width="1280" height="640"/>

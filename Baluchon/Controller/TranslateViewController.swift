@@ -15,7 +15,21 @@ class TranslateViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    let service = TranslateService()
+    
+    @IBOutlet weak var textToTranslate: UITextField!
+    
+    @IBOutlet weak var textTranslate: UITextField!
+    
+    @IBAction func translateButton(_ sender: Any) {
+        if let text = textToTranslate.text {
+            service.entryText = text
+            service.getTranslate() { (data) in
+                self.textTranslate.text = "\(self.service.convertedText)"
+            }
+               
+        }
+    }
     /*
     // MARK: - Navigation
 

@@ -23,8 +23,6 @@ class CurrencyService {
         let exchangerateURL = URL(string: "https://api.exchangerate.host/convert?" + "\(currencyFrom)" + "\(currencyTo)" + "\(amount)" + "\(entryAmount)")!
         var request = URLRequest(url: exchangerateURL)
         request.httpMethod = "GET"
-        print(exchangerateURL)
-        
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {

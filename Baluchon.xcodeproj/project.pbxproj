@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		631146F427BCEBDE00FCC596 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631146F327BCEBDE00FCC596 /* TranslateService.swift */; };
 		633C121D275503A1006CA6D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C121C275503A1006CA6D7 /* AppDelegate.swift */; };
 		633C121F275503A1006CA6D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C121E275503A1006CA6D7 /* SceneDelegate.swift */; };
 		633C1221275503A1006CA6D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1220275503A1006CA6D7 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		631146F327BCEBDE00FCC596 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		633C1219275503A1006CA6D7 /* Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		633C121C275503A1006CA6D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		633C121E275503A1006CA6D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				633C125727550A00006CA6D7 /* CurrencyService.swift */,
 				63E2AEFE27565A35002A1CB4 /* WeatherService.swift */,
+				631146F327BCEBDE00FCC596 /* TranslateService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				63E2AEFF27565A35002A1CB4 /* WeatherService.swift in Sources */,
 				633C1221275503A1006CA6D7 /* ViewController.swift in Sources */,
 				633C1253275507A0006CA6D7 /* WeatherViewController.swift in Sources */,
+				631146F427BCEBDE00FCC596 /* TranslateService.swift in Sources */,
 				633C124D2755056E006CA6D7 /* TranslateViewController.swift in Sources */,
 				633C124F275505D1006CA6D7 /* CurrencyViewController.swift in Sources */,
 				633C121D275503A1006CA6D7 /* AppDelegate.swift in Sources */,
