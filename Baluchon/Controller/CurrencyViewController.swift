@@ -26,10 +26,21 @@ let convert = CurrencyService()
     @IBOutlet weak var textField: UITextField!
     
     
-    @IBAction func ButtonConvert(_ sender: Any) {
+    @IBAction func ButtonConvertUSDToEUR(_ sender: Any) {
+       
         if let text = textField.text {
-            convert.entryAmount = text
-            convert.getCurrency() { (data) in
+            let exchangerateURL = URL(string: "https://api.exchangerate.host/convert?from=USD&to=EUR&amount=" + text)!
+            convert.getCurrency(url: exchangerateURL) { (data) in
+                self.result.text = "\(self.convert.convertResult)" + " $"
+            }
+               
+        }
+        
+    }
+    @IBAction func ButtonConvertEURToUSD(_ sender: Any) {
+        if let text = textField.text {
+            let exchangerateURL = URL(string: "https://api.exchangerate.host/convert?from=EUR&to=USD&amount=" + text)!
+            convert.getCurrency(url: exchangerateURL) { (data) in
                 self.result.text = "\(self.convert.convertResult)" + " $"
             }
                

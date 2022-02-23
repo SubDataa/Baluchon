@@ -15,12 +15,21 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     private let weather = WeatherService()
     private var icon = ""
     private var firstLocation: CLLocation?
+    private var latitude = ""
+    private var longitude = ""
     
     @IBOutlet weak private var degreeText: UILabel!
     @IBOutlet weak private var cityText: UILabel!
     @IBOutlet weak private var temperatureText: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var weatherDescription: UILabel!
+    
+    @IBOutlet weak var parisLabel: UILabel!
+    @IBOutlet weak var parisTempLabel: UILabel!
+    @IBOutlet weak var nyTempLabel: UILabel!
+    @IBOutlet weak var nyLabel: UILabel!
+    @IBOutlet weak var nyWeatherImg: UIImageView!
+    @IBOutlet weak var parisWeatherImg: UIImageView!
     
     //MARK: - CLLocationManager INSTANCE & DARK MODE SETTING
     override func viewDidLoad() {
@@ -35,6 +44,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         overrideUserInterfaceStyle = .dark
+        showParisWeather()
+        showNYWeather()
     }
     
     //MARK: - OPEN ALERT WHEN USER DECLINE LOCATION
@@ -62,27 +73,46 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - UPDATING COORD FOR API CALL
     private func updateCoor(location: CLLocation) {
-        weather.latitude = "\(location.coordinate.latitude)"
-        weather.longitude = "\(location.coordinate.longitude)"
+        latitude = "\(location.coordinate.latitude)"
+        longitude = "\(location.coordinate.longitude)"
         firstLocation = location
         showWeather()
     }
     
     //MARK: - API CALL
     private func showWeather() {
-        weather.getWeather { (data) in
-            if data == nil {
-                let alertController = UIAlertController(title: "Error", message: "Oops, something went wrong", preferredStyle: .alert)
-                    self.present(alertController, animated: true, completion: nil)
-            } else {
+        let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?" + "lat=" + "\(latitude)" + "&lon=" + "\(longitude)" + "&appid=b30e3845dbb1cb9ad75ce7da52752392")
+        weather.getWeather(url: weatherURL!) { (data) in
             self.temperatureText.text = "\(self.weather.temperatureC)"
             self.cityText.text = "\(self.weather.currentCity)"
             self.weatherDescription.text = "\(self.weather.weatherDescription)"
             self.icon = self.weather.weatherIcon
             self.weatherIcon.image = UIImage(named: "\(self.icon).png")
             self.degreeText.text = "°"
-            }
+        }
+        
+        }
+        
+    private func showParisWeather() {
+        let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=48.866667&lon=2.333333&appid=b30e3845dbb1cb9ad75ce7da52752392")
+        weather.getWeather(url: weatherURL!) { (data) in
+            self.parisTempLabel.text = "\(self.weather.temperatureC)"
+            self.parisLabel.text = "\(self.weather.currentCity)"
+            self.icon = self.weather.weatherIcon
+            self.parisWeatherImg.image = UIImage(named: "\(self.icon).png")
+
         }
     }
+    private func showNYWeather() {
+        let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=40.7127281&lon=-74.0060152&appid=b30e3845dbb1cb9ad75ce7da52752392")
+        weather.getWeather(url: weatherURL!) { (data) in
+            self.nyTempLabel.text = "\(self.weather.temperatureC)"
+            self.nyLabel.text = "\(self.weather.currentCity)"
+            self.icon = self.weather.weatherIcon
+            self.nyWeatherImg.image = UIImage(named: "\(self.icon).png")
+
+        }
+    }
+    
 }
 

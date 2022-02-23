@@ -16,12 +16,8 @@ class CurrencyService {
     var convertResult = ""
     
     
-    func getCurrency(completionHandler: @escaping (Data?) -> Void)  {
-        let currencyFrom = "from=EUR"
-        let currencyTo = "&to=USD"
-        let amount = "&amount="
-        let exchangerateURL = URL(string: "https://api.exchangerate.host/convert?" + "\(currencyFrom)" + "\(currencyTo)" + "\(amount)" + "\(entryAmount)")!
-        var request = URLRequest(url: exchangerateURL)
+    func getCurrency(url: URL, completionHandler: @escaping (Data?) -> Void)  {
+        var request = URLRequest(url: url)
         request.httpMethod = "GET"
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { (data, response, error) in

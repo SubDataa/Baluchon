@@ -33,18 +33,14 @@ struct DatasWeather: Codable {
 class WeatherService {
     
     // MARK: - VARIABLE FOR API CALL
-    var longitude = ""
-    var latitude = ""
     var temperatureC = 0
     var currentCity = ""
     var weatherIcon = ""
     var weatherDescription = ""
     
     // MARK: - API CONFIGURATION
-    func getWeather(completionHandler: @escaping (Data?) -> Void)  {
-        let key = "&appid=b30e3845dbb1cb9ad75ce7da52752392"
-        let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?" + "lat=" + "\(latitude)" + "&lon=" + "\(longitude)" + "\(key)")!
-        var request = URLRequest(url: weatherURL)
+    func getWeather(url: URL, completionHandler: @escaping (Data?) -> Void)  {
+        var request = URLRequest(url: url)
         request.httpMethod = "GET"
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { (data, response, error) in

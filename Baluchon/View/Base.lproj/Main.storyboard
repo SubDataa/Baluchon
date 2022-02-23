@@ -90,6 +90,64 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="euT-De-Ou3">
+                                <rect key="frame" x="15" y="650" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="euT-De-Ou3" secondAttribute="height" multiplier="1:1" id="Qn6-44-Ngy"/>
+                                    <constraint firstAttribute="width" constant="75" id="XIF-ug-AEQ"/>
+                                    <constraint firstAttribute="height" constant="75" id="YAA-eT-XPZ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="09n" translatesAutoresizingMaskIntoConstraints="NO" id="6e6-ES-swR">
+                                <rect key="frame" x="15" y="733" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6e6-ES-swR" secondAttribute="height" multiplier="1:1" id="XgD-LP-DlM"/>
+                                    <constraint firstAttribute="width" constant="75" id="p6v-SU-urA"/>
+                                    <constraint firstAttribute="height" constant="75" id="uIe-Oh-BOW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvI-JT-32q">
+                                <rect key="frame" x="346" y="677" width="48" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TO-cI-6ce">
+                                <rect key="frame" x="346" y="760" width="48" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New YORK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUg-5Q-TDH">
+                                <rect key="frame" x="99" y="760" width="226" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NX3-hF-vTr">
+                                <rect key="frame" x="380" y="667" width="10" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="highlightedColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gun-se-Kx2">
+                                <rect key="frame" x="380" y="749" width="10" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="highlightedColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Paris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrW-9w-U91">
+                                <rect key="frame" x="102" y="677" width="220" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mgu-Ru-6KD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -98,7 +156,9 @@
                             <constraint firstItem="AiL-Jt-IrX" firstAttribute="top" secondItem="Mgu-Ru-6KD" secondAttribute="top" constant="145" id="8M2-ss-Tfw"/>
                             <constraint firstItem="BGw-Nb-Ak6" firstAttribute="centerX" secondItem="KjT-SZ-5Vc" secondAttribute="centerX" id="8RI-WM-hsi"/>
                             <constraint firstItem="onW-xM-fEd" firstAttribute="top" secondItem="Mgu-Ru-6KD" secondAttribute="top" constant="7" id="9GX-ws-e5U"/>
+                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="bottom" secondItem="euT-De-Ou3" secondAttribute="bottom" constant="88" id="9KX-M7-rH0"/>
                             <constraint firstItem="AiL-Jt-IrX" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" constant="20" id="B3r-YU-kq1"/>
+                            <constraint firstItem="euT-De-Ou3" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" constant="15" id="Eg8-GH-iDA"/>
                             <constraint firstItem="CcK-as-Oh6" firstAttribute="top" secondItem="S78-SA-gJx" secondAttribute="bottom" constant="79" id="Gax-X6-ziX"/>
                             <constraint firstItem="pG7-TJ-6gY" firstAttribute="top" secondItem="AiL-Jt-IrX" secondAttribute="bottom" constant="37" id="H0L-jW-zA5"/>
                             <constraint firstItem="S78-SA-gJx" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" constant="15" id="Im0-Wn-8kd"/>
@@ -114,16 +174,24 @@
                             <constraint firstItem="Mgu-Ru-6KD" firstAttribute="trailing" secondItem="AiL-Jt-IrX" secondAttribute="trailing" constant="65" id="baO-zA-LQe">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
+                            <constraint firstItem="6e6-ES-swR" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" constant="15" id="krl-hV-YdI"/>
                             <constraint firstItem="lQu-tx-MM2" firstAttribute="trailing" secondItem="BGw-Nb-Ak6" secondAttribute="trailing" constant="25" id="mm1-jT-FwD"/>
                             <constraint firstItem="BGw-Nb-Ak6" firstAttribute="top" secondItem="CcK-as-Oh6" secondAttribute="bottom" constant="8" symbolic="YES" id="vRR-KZ-x2o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CcK-as-Oh6" secondAttribute="trailing" constant="-56" id="vfE-JQ-XFg"/>
                             <constraint firstItem="Mgu-Ru-6KD" firstAttribute="trailing" secondItem="pG7-TJ-6gY" secondAttribute="trailing" constant="70" id="vyW-UZ-fdS"/>
+                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="bottom" secondItem="6e6-ES-swR" secondAttribute="bottom" constant="5" id="z4T-Qa-cFh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weather" image="Sun24x24" id="aDU-Vz-bNv"/>
                     <connections>
                         <outlet property="cityText" destination="onW-xM-fEd" id="EBj-gW-53z"/>
                         <outlet property="degreeText" destination="lQu-tx-MM2" id="wwy-mE-xAm"/>
+                        <outlet property="nyLabel" destination="QUg-5Q-TDH" id="CUv-c1-Ang"/>
+                        <outlet property="nyTempLabel" destination="8TO-cI-6ce" id="aWH-lF-k4b"/>
+                        <outlet property="nyWeatherImg" destination="6e6-ES-swR" id="6kZ-Up-B5p"/>
+                        <outlet property="parisLabel" destination="RrW-9w-U91" id="L1Z-0i-Sbo"/>
+                        <outlet property="parisTempLabel" destination="IvI-JT-32q" id="5ed-Jk-Sst"/>
+                        <outlet property="parisWeatherImg" destination="euT-De-Ou3" id="O65-DX-4Zf"/>
                         <outlet property="temperatureText" destination="BGw-Nb-Ak6" id="xB1-ru-0kL"/>
                         <outlet property="weatherDescription" destination="pG7-TJ-6gY" id="bgX-fL-345"/>
                         <outlet property="weatherIcon" destination="AiL-Jt-IrX" id="ZcW-XC-TBo"/>
@@ -131,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88O-c6-vLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1193" y="895"/>
+            <point key="canvasLocation" x="1192.753623188406" y="894.64285714285711"/>
         </scene>
         <!--Convert-->
         <scene sceneID="TBQ-FQ-jY2">
@@ -182,9 +250,9 @@
                                 <color key="backgroundColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="buttonconvert"/>
+                                <state key="normal" image="buttoneurusd"/>
                                 <connections>
-                                    <action selector="ButtonConvert:" destination="Tsa-mA-TCo" eventType="touchUpInside" id="oAP-yd-qVr"/>
+                                    <action selector="ButtonConvertEURToUSD:" destination="Tsa-mA-TCo" eventType="touchUpInside" id="D1F-LX-fO2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-h8-n6j">
@@ -197,6 +265,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpn-xv-PHO">
+                                <rect key="frame" x="96" y="455" width="224" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="buttonusdeur"/>
+                                <connections>
+                                    <action selector="ButtonConvertUSDToEUR:" destination="Tsa-mA-TCo" eventType="touchUpInside" id="vW1-yo-apq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6VF-Vt-mf7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -320,10 +397,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="01d" width="269" height="269"/>
+        <image name="09n" width="285" height="240"/>
         <image name="Euro24x24" width="24" height="24"/>
         <image name="Sun24x24" width="24" height="24"/>
-        <image name="buttonconvert" width="200" height="31"/>
+        <image name="buttoneurusd" width="200" height="31"/>
         <image name="buttontranslate" width="200" height="31"/>
+        <image name="buttonusdeur" width="200" height="31"/>
         <image name="convert" width="981" height="904"/>
         <image name="currency_background" width="512" height="512"/>
         <image name="icontranslate" width="340" height="316"/>
