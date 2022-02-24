@@ -37,12 +37,17 @@ class WeatherService {
     var currentCity = ""
     var weatherIcon = ""
     var weatherDescription = ""
+    var session = URLSession(configuration: .default)
+    
+    init(session: URLSession) {
+        self.session = session
+    }
     
     // MARK: - API CONFIGURATION
     func getWeather(url: URL, completionHandler: @escaping (Data?) -> Void)  {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        let session = URLSession(configuration: .default)
+        
         let task = session.dataTask(with: request) { (data, response, error) in
                 if let data = data, error == nil, let response = response as? HTTPURLResponse,
                    response.statusCode == 200,

@@ -24,6 +24,10 @@
 		63B3172C2784A793006FD977 /* coolvetica rg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63B3172B2784A793006FD977 /* coolvetica rg.otf */; };
 		63B3172E2784A8D2006FD977 /* theboldfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63B3172D2784A8D2006FD977 /* theboldfont.ttf */; };
 		63B317302784A957006FD977 /* LEMONMILK-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63B3172F2784A957006FD977 /* LEMONMILK-Bold.otf */; };
+		63C6366527C7D0EC003F7E28 /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C6366427C7D0EC003F7E28 /* Weather.json */; };
+		63C6366827C7D20A003F7E28 /* WeatherFakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6366727C7D20A003F7E28 /* WeatherFakeResponseData.swift */; };
+		63C6366A27C7D667003F7E28 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6366927C7D667003F7E28 /* URLSessionFake.swift */; };
+		63C6366C27C7D9C3003F7E28 /* WeatherServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6366B27C7D9C3003F7E28 /* WeatherServiceTestCase.swift */; };
 		63E2AEFF27565A35002A1CB4 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2AEFE27565A35002A1CB4 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,10 @@
 		63B3172B2784A793006FD977 /* coolvetica rg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolvetica rg.otf"; sourceTree = "<group>"; };
 		63B3172D2784A8D2006FD977 /* theboldfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theboldfont.ttf; sourceTree = "<group>"; };
 		63B3172F2784A957006FD977 /* LEMONMILK-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LEMONMILK-Bold.otf"; sourceTree = "<group>"; };
+		63C6366427C7D0EC003F7E28 /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
+		63C6366727C7D20A003F7E28 /* WeatherFakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFakeResponseData.swift; sourceTree = "<group>"; };
+		63C6366927C7D667003F7E28 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
+		63C6366B27C7D9C3003F7E28 /* WeatherServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTestCase.swift; sourceTree = "<group>"; };
 		63E2AEFE27565A35002A1CB4 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +140,12 @@
 		633C1232275503A2006CA6D7 /* BaluchonTests */ = {
 			isa = PBXGroup;
 			children = (
+				63C6366627C7D1FA003F7E28 /* New Group */,
 				633C1233275503A2006CA6D7 /* BaluchonTests.swift */,
+				63C6366427C7D0EC003F7E28 /* Weather.json */,
+				63C6366727C7D20A003F7E28 /* WeatherFakeResponseData.swift */,
+				63C6366927C7D667003F7E28 /* URLSessionFake.swift */,
+				63C6366B27C7D9C3003F7E28 /* WeatherServiceTestCase.swift */,
 			);
 			path = BaluchonTests;
 			sourceTree = "<group>";
@@ -184,6 +197,13 @@
 				63B3172D2784A8D2006FD977 /* theboldfont.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		63C6366627C7D1FA003F7E28 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C6366527C7D0EC003F7E28 /* Weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C6366C27C7D9C3003F7E28 /* WeatherServiceTestCase.swift in Sources */,
 				633C1234275503A2006CA6D7 /* BaluchonTests.swift in Sources */,
+				63C6366A27C7D667003F7E28 /* URLSessionFake.swift in Sources */,
+				63C6366827C7D20A003F7E28 /* WeatherFakeResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

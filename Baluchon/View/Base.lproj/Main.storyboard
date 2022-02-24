@@ -68,18 +68,6 @@
                                     <constraint firstAttribute="width" secondItem="AiL-Jt-IrX" secondAttribute="height" multiplier="374:189" id="D5N-65-bAn"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQu-tx-MM2">
-                                <rect key="frame" x="217" y="379" width="84" height="55"/>
-                                <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lQu-tx-MM2" secondAttribute="height" multiplier="84:55" id="0jD-Wg-Cym"/>
-                                    <constraint firstAttribute="width" constant="84" id="cOe-ck-b7O"/>
-                                    <constraint firstAttribute="height" constant="55" id="eU2-Jo-khb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
-                                <color key="textColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="euT-De-Ou3">
                                 <rect key="frame" x="15" y="650" width="75" height="75"/>
                                 <constraints>
@@ -174,13 +162,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQu-tx-MM2">
+                                <rect key="frame" x="223" y="379" width="84" height="55"/>
+                                <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lQu-tx-MM2" secondAttribute="height" multiplier="84:55" id="0jD-Wg-Cym"/>
+                                    <constraint firstAttribute="width" constant="84" id="cOe-ck-b7O"/>
+                                    <constraint firstAttribute="height" constant="55" id="eU2-Jo-khb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <color key="textColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mgu-Ru-6KD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RrW-9w-U91" firstAttribute="leading" secondItem="euT-De-Ou3" secondAttribute="trailing" constant="7" id="3CR-tb-bZY"/>
                             <constraint firstItem="CcK-as-Oh6" firstAttribute="centerX" secondItem="onW-xM-fEd" secondAttribute="centerX" constant="-5" id="4Zu-D8-bHR"/>
-                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="trailing" secondItem="lQu-tx-MM2" secondAttribute="trailing" constant="113" id="4hc-lB-rqh"/>
                             <constraint firstItem="gun-se-Kx2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QUg-5Q-TDH" secondAttribute="trailing" constant="8" symbolic="YES" id="5GN-2l-vsb"/>
                             <constraint firstItem="Mgu-Ru-6KD" firstAttribute="bottom" secondItem="gun-se-Kx2" secondAttribute="bottom" constant="36.5" id="5Rc-Qw-e0e"/>
                             <constraint firstItem="AiL-Jt-IrX" firstAttribute="top" secondItem="Mgu-Ru-6KD" secondAttribute="top" constant="145" id="8M2-ss-Tfw"/>
@@ -215,6 +214,7 @@
                             <constraint firstItem="RrW-9w-U91" firstAttribute="centerY" secondItem="euT-De-Ou3" secondAttribute="centerY" id="blO-j9-2rN"/>
                             <constraint firstItem="8TO-cI-6ce" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QUg-5Q-TDH" secondAttribute="trailing" constant="8" symbolic="YES" id="dxM-eP-UsG"/>
                             <constraint firstItem="Mgu-Ru-6KD" firstAttribute="trailing" secondItem="IvI-JT-32q" secondAttribute="trailing" constant="20" id="gzI-cW-cc0"/>
+                            <constraint firstItem="Mgu-Ru-6KD" firstAttribute="trailing" secondItem="lQu-tx-MM2" secondAttribute="trailing" constant="107" id="iUI-zE-XP0"/>
                             <constraint firstItem="6e6-ES-swR" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" constant="15" id="krl-hV-YdI"/>
                             <constraint firstItem="AiL-Jt-IrX" firstAttribute="top" secondItem="pG7-TJ-6gY" secondAttribute="bottom" constant="18" id="lFK-mL-cir"/>
                             <constraint firstItem="pG7-TJ-6gY" firstAttribute="leading" secondItem="Mgu-Ru-6KD" secondAttribute="leading" id="p7J-RO-shX"/>
@@ -388,7 +388,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJf-ez-lva">
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJf-ez-lva">
                                 <rect key="frame" x="77" y="463" width="260" height="170"/>
                                 <color key="backgroundColor" red="0.1174166052" green="0.13809732890000001" blue="0.14726965210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -396,10 +396,10 @@
                                     <constraint firstAttribute="height" constant="170" id="Qzv-zr-k7N"/>
                                     <constraint firstAttribute="width" constant="260" id="ZfA-Uv-pw4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="0.0"/>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-XS-lRZ">
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-XS-lRZ">
                                 <rect key="frame" x="77" y="180" width="260" height="170"/>
                                 <color key="backgroundColor" red="0.1174166052" green="0.13809732890000001" blue="0.14726965210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -408,8 +408,8 @@
                                     <constraint firstAttribute="height" constant="170" id="PLx-Hr-q8C"/>
                                     <constraint firstAttribute="width" secondItem="gGC-XS-lRZ" secondAttribute="height" multiplier="26:17" id="vis-Vu-65n"/>
                                 </constraints>
-                                <color key="textColor" red="0.89803922179999995" green="0.0" blue="0.1201462355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="0.0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>

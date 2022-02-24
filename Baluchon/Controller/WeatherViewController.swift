@@ -12,7 +12,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - VARIABLE FOR UI & CLASS INSTANCE 
     private let locationManager = CLLocationManager()
-    private let weather = WeatherService()
+    private let weather = WeatherService(session: .shared)
     private var icon = ""
     private var firstLocation: CLLocation?
     private var latitude = ""

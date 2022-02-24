@@ -8,12 +8,3 @@
 import XCTest
 @testable import Baluchon
 
-class BaluchonTests: XCTestCase {
-
-    let weather = WeatherService()
-    let translate = TranslateService()
-    let currency = CurrencyService()
-    
-    
-    
-}
