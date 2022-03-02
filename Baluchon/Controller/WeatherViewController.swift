@@ -77,6 +77,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         longitude = "\(location.coordinate.longitude)"
         firstLocation = location
         showWeather()
+        
     }
     
     //MARK: - API CALL
@@ -94,10 +95,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     private func showParisWeather() {
         WeatherService.shared.getWeather(lat: "48.866667", lon: "2.333333") { (sucess, data) in
             if sucess {
-                self.parisTempLabel.text = "\(WeatherService.shared.temperatureC)"
-                self.parisLabel.text = "\(WeatherService.shared.currentCity)"
-                self.icon = WeatherService.shared.weatherIcon
-                self.parisWeatherImg.image = UIImage(named: "\(self.icon).png")
+                self.updateWeatherView(icon: self.parisWeatherImg, temp: self.parisTempLabel, city: self.parisLabel, description: nil)
             }
 
         }
@@ -105,20 +103,16 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     private func showNYWeather() {
         WeatherService.shared.getWeather(lat: "40.7127281", lon: "-74.0060152") { (sucess, data) in
             if sucess {
-                self.nyTempLabel.text = "\(WeatherService.shared.temperatureC)"
-                self.nyLabel.text = "\(WeatherService.shared.currentCity)"
-                self.icon = WeatherService.shared.weatherIcon
-                self.nyWeatherImg.image = UIImage(named: "\(self.icon).png")
-
+                self.updateWeatherView(icon: self.nyWeatherImg, temp: self.nyTempLabel, city: self.nyLabel, description: nil)
             }
             
         }
     }
     
-    private func updateWeatherView(icon: UIImageView, temp: UILabel, city: UILabel, description: UILabel) {
+    private func updateWeatherView(icon: UIImageView, temp: UILabel, city: UILabel, description: UILabel?) {
         temp.text = "\(WeatherService.shared.temperatureC)"
         city.text = "\(WeatherService.shared.currentCity)"
-        description.text = "\(WeatherService.shared.weatherDescription)"
+        description?.text = "\(WeatherService.shared.weatherDescription)"
         self.icon = WeatherService.shared.weatherIcon
         icon.image = UIImage(named: "\(self.icon).png")
         
