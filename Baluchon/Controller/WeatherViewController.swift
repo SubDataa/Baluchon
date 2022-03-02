@@ -12,7 +12,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - VARIABLE FOR UI & CLASS INSTANCE 
     private let locationManager = CLLocationManager()
-    private let weather = WeatherService(session: .shared)
+ 
     private var icon = ""
     private var firstLocation: CLLocation?
     private var latitude = ""
@@ -81,37 +81,47 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - API CALL
     private func showWeather() {
-        let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?" + "lat=" + "\(latitude)" + "&lon=" + "\(longitude)" + "&appid=b30e3845dbb1cb9ad75ce7da52752392")
-        weather.getWeather(url: weatherURL!) { (data) in
-            self.temperatureText.text = "\(self.weather.temperatureC)"
-            self.cityText.text = "\(self.weather.currentCity)"
-            self.weatherDescription.text = "\(self.weather.weatherDescription)"
-            self.icon = self.weather.weatherIcon
-            self.weatherIcon.image = UIImage(named: "\(self.icon).png")
-            self.degreeText.text = "°"
+        WeatherService.shared.getWeather(lat: latitude, lon: longitude) { (sucess, data) in
+            if sucess {
+                self.updateWeatherView(icon: self.weatherIcon, temp: self.temperatureText, city: self.cityText, description: self.weatherDescription)
+                self.degreeText.text = "°"
+            }
+          
         }
         
-        }
+    }
         
     private func showParisWeather() {
-        let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=48.866667&lon=2.333333&appid=b30e3845dbb1cb9ad75ce7da52752392")
-        weather.getWeather(url: weatherURL!) { (data) in
-            self.parisTempLabel.text = "\(self.weather.temperatureC)"
-            self.parisLabel.text = "\(self.weather.currentCity)"
-            self.icon = self.weather.weatherIcon
-            self.parisWeatherImg.image = UIImage(named: "\(self.icon).png")
+        WeatherService.shared.getWeather(lat: "48.866667", lon: "2.333333") { (sucess, data) in
+            if sucess {
+                self.parisTempLabel.text = "\(WeatherService.shared.temperatureC)"
+                self.parisLabel.text = "\(WeatherService.shared.currentCity)"
+                self.icon = WeatherService.shared.weatherIcon
+                self.parisWeatherImg.image = UIImage(named: "\(self.icon).png")
+            }
 
         }
     }
     private func showNYWeather() {
-        let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=40.7127281&lon=-74.0060152&appid=b30e3845dbb1cb9ad75ce7da52752392")
-        weather.getWeather(url: weatherURL!) { (data) in
-            self.nyTempLabel.text = "\(self.weather.temperatureC)"
-            self.nyLabel.text = "\(self.weather.currentCity)"
-            self.icon = self.weather.weatherIcon
-            self.nyWeatherImg.image = UIImage(named: "\(self.icon).png")
+        WeatherService.shared.getWeather(lat: "40.7127281", lon: "-74.0060152") { (sucess, data) in
+            if sucess {
+                self.nyTempLabel.text = "\(WeatherService.shared.temperatureC)"
+                self.nyLabel.text = "\(WeatherService.shared.currentCity)"
+                self.icon = WeatherService.shared.weatherIcon
+                self.nyWeatherImg.image = UIImage(named: "\(self.icon).png")
 
+            }
+            
         }
+    }
+    
+    private func updateWeatherView(icon: UIImageView, temp: UILabel, city: UILabel, description: UILabel) {
+        temp.text = "\(WeatherService.shared.temperatureC)"
+        city.text = "\(WeatherService.shared.currentCity)"
+        description.text = "\(WeatherService.shared.weatherDescription)"
+        self.icon = WeatherService.shared.weatherIcon
+        icon.image = UIImage(named: "\(self.icon).png")
+        
     }
     
 }
