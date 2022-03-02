@@ -19,8 +19,8 @@ class CurrencyService {
     var convertResult = ""
     var task: URLSessionDataTask?
     
-    func getCurrency(url: URL, callback: @escaping (Bool, Data?) -> Void)  {
-        var request = URLRequest(url: url)
+    func getCurrency(from: String, to: String, amount: String, callback: @escaping (Bool, Data?) -> Void)  {
+        var request = createCurrencyURL(from: from, to: to, amount: amount)
         request.httpMethod = "GET"
         let session = URLSession(configuration: .default)
         task = session.dataTask(with: request) { (data, response, error) in
@@ -44,5 +44,8 @@ class CurrencyService {
                         }
         }
         task?.resume()
-    }  
+    }
+    func createCurrencyURL(from: String, to: String, amount: String) -> URLRequest{
+        return URLRequest(url: URL(string: "https://api.exchangerate.host/convert?" +  "\(from)" + "\(to)" + "\(amount)")!)
+    }
 }

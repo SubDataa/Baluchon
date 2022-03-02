@@ -29,8 +29,8 @@ class ConvertViewController: UIViewController {
     @IBAction func ButtonConvertUSDToEUR(_ sender: Any) {
        
         if let text = textField.text {
-            let exchangerateURL = URL(string: "https://api.exchangerate.host/convert?from=USD&to=EUR&amount=" + text)!
-            CurrencyService.shared.getCurrency(url: exchangerateURL) { (success, data) in
+           
+            CurrencyService.shared.getCurrency(from: "from=USD", to: "&to=EUR", amount: "&amount=" + text) { (success, data) in
                 if success {
                     self.result.text = "\(CurrencyService.shared.convertResult)" + " $"
                 }
@@ -42,8 +42,8 @@ class ConvertViewController: UIViewController {
     }
     @IBAction func ButtonConvertEURToUSD(_ sender: Any) {
         if let text = textField.text {
-            let exchangerateURL = URL(string: "https://api.exchangerate.host/convert?from=EUR&to=USD&amount=" + text)!
-            CurrencyService.shared.getCurrency(url: exchangerateURL) { (sucess, data) in
+           
+            CurrencyService.shared.getCurrency(from: "from=EUR", to: "&to=USD", amount: "&amount=" + text) { (sucess, data) in
                 if sucess {
                     self.result.text = "\(CurrencyService.shared.convertResult)" + " $"
                 }
