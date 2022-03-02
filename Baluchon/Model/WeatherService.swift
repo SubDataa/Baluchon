@@ -31,6 +31,7 @@ struct DatasWeather: Codable {
 }
 
 class WeatherService {
+    // MARK: - Singleton
     static var shared = WeatherService()
     private init() {}
     // MARK: - VARIABLE FOR API CALL
@@ -51,7 +52,7 @@ class WeatherService {
     func getWeather(lat: String, lon: String, callback: @escaping (Bool, Data?) -> Void)  {
         var request = createWeatherURL(lat: lat, lon: lon)
         request.httpMethod = "GET"
-        task?.cancel()
+        //task?.cancel()
         task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
             guard let data = data, error == nil else {

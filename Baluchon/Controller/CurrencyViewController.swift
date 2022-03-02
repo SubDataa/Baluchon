@@ -10,7 +10,7 @@ import UIKit
 class ConvertViewController: UIViewController {
 
     
-let convert = CurrencyService()
+
     //
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,11 @@ let convert = CurrencyService()
        
         if let text = textField.text {
             let exchangerateURL = URL(string: "https://api.exchangerate.host/convert?from=USD&to=EUR&amount=" + text)!
-            convert.getCurrency(url: exchangerateURL) { (data) in
-                self.result.text = "\(self.convert.convertResult)" + " $"
+            CurrencyService.shared.getCurrency(url: exchangerateURL) { (success, data) in
+                if success {
+                    self.result.text = "\(CurrencyService.shared.convertResult)" + " $"
+                }
+                
             }
                
         }
@@ -40,8 +43,11 @@ let convert = CurrencyService()
     @IBAction func ButtonConvertEURToUSD(_ sender: Any) {
         if let text = textField.text {
             let exchangerateURL = URL(string: "https://api.exchangerate.host/convert?from=EUR&to=USD&amount=" + text)!
-            convert.getCurrency(url: exchangerateURL) { (data) in
-                self.result.text = "\(self.convert.convertResult)" + " $"
+            CurrencyService.shared.getCurrency(url: exchangerateURL) { (sucess, data) in
+                if sucess {
+                    self.result.text = "\(CurrencyService.shared.convertResult)" + " $"
+                }
+                
             }
                
         }
