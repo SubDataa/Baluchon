@@ -67,7 +67,7 @@ class WeatherServiceTestCase: XCTestCase {
             weatherService.getWeather(url: fakeURL!) { (data) in
             //then
                 let name = "New York"
-                XCTAssertEqual(name, data?)
+                XCTAssertEqual(name, weatherService.currentCity)
                 XCTAssertNotNil(data)
             }
        
