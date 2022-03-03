@@ -14,10 +14,15 @@ class CurrencyService {
     var entryAmount = ""
     var task: URLSessionDataTask?
     
+    private var session = URLSession(configuration: .default)
+    init(session: URLSession) {
+        self.session = session
+    }
+    
     func getCurrency(from: String, to: String, amount: String, callback: @escaping (Bool, CurrencyObject?) -> Void)  {
         var request = createCurrencyURL(from: from, to: to, amount: amount)
         request.httpMethod = "GET"
-        let session = URLSession(configuration: .default)
+        
         task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {

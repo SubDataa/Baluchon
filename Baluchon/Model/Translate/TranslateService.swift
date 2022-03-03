@@ -14,6 +14,10 @@ class TranslateService {
     var task: URLSessionDataTask?
     var entryText = ""
     var convertedText = ""
+    private var session = URLSession(configuration: .default)
+    init(session: URLSession) {
+        self.session = session
+    }
     
     func getTranslate(callback: @escaping (Bool, TranslateObject?) -> Void)  {
         let escapedString = entryText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
@@ -21,7 +25,6 @@ class TranslateService {
         
         var request = URLRequest(url: translateURL)
         request.httpMethod = "GET"
-        let session = URLSession(configuration: .default)
         task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async { [self] in
                 guard let data = data, error == nil else {
