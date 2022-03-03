@@ -32,7 +32,7 @@ class ConvertViewController: UIViewController {
            
             CurrencyService.shared.getCurrency(from: "from=USD", to: "&to=EUR", amount: "&amount=" + text) { (success, data) in
                 if success {
-                    self.result.text = "\(CurrencyService.shared.convertResult)" + " $"
+                    self.updateCurrencyView(from: data!)
                 }
                 
             }
@@ -45,12 +45,16 @@ class ConvertViewController: UIViewController {
            
             CurrencyService.shared.getCurrency(from: "from=EUR", to: "&to=USD", amount: "&amount=" + text) { (sucess, data) in
                 if sucess {
-                    self.result.text = "\(CurrencyService.shared.convertResult)" + " $"
+                    self.updateCurrencyView(from: data!)
                 }
                 
             }
                
         }
+        
+    }
+    func updateCurrencyView(from data: CurrencyObject) {
+        self.result.text = data.result
         
     }
 

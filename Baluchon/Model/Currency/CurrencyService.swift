@@ -7,19 +7,14 @@
 
 import Foundation
 
-struct Datas: Codable {
-    var result: Float 
-}
-
 class CurrencyService {
     static var shared = CurrencyService()
     private init() {}
     
     var entryAmount = ""
-    var convertResult = ""
     var task: URLSessionDataTask?
     
-    func getCurrency(from: String, to: String, amount: String, callback: @escaping (Bool, Data?) -> Void)  {
+    func getCurrency(from: String, to: String, amount: String, callback: @escaping (Bool, CurrencyObject?) -> Void)  {
         var request = createCurrencyURL(from: from, to: to, amount: amount)
         request.httpMethod = "GET"
         let session = URLSession(configuration: .default)
@@ -33,19 +28,24 @@ class CurrencyService {
                     callback(false, nil)
                     return
                 }
-                guard let responseJSON = try? JSONDecoder().decode(Datas.self, from: data) else {
+                guard let responseJSON = try? JSONDecoder().decode(CurrencyData.self, from: data) else {
                     callback(false, nil)
                     return
                 }
                             
-                let formatedResult = String(format:"%.2f", responseJSON.result)
-                self.convertResult = formatedResult
-                callback(true, data)
+                let currency = self.createCurrencyObject(data: responseJSON)
+                callback(true, currency)
                         }
         }
         task?.resume()
     }
     func createCurrencyURL(from: String, to: String, amount: String) -> URLRequest{
         return URLRequest(url: URL(string: "https://api.exchangerate.host/convert?" +  "\(from)" + "\(to)" + "\(amount)")!)
+    }
+    
+    func createCurrencyObject(data: CurrencyData) -> CurrencyObject {
+        let formatedResult = String(format:"%.2f", data.result)
+        let result = formatedResult
+        return CurrencyObject(result: result)
     }
 }
