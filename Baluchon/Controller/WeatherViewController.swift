@@ -12,6 +12,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - VARIABLE FOR UI & CLASS INSTANCE 
     private let locationManager = CLLocationManager()
+   
  
     private var icon = ""
     private var firstLocation: CLLocation?
@@ -82,9 +83,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - API CALL
     private func showWeather() {
-        WeatherService.shared.getWeather(lat: latitude, lon: longitude) { (sucess, data) in
+        WeatherService.shared.getWeather(lat: latitude, lon: longitude) { (sucess, weather) in
             if sucess {
-                self.updateWeatherView(icon: self.weatherIcon, temp: self.temperatureText, city: self.cityText, description: self.weatherDescription)
+                self.updateWeatherView(from: weather!, icon: self.weatherIcon, temp: self.temperatureText, city: self.cityText, description: self.weatherDescription)
                 self.degreeText.text = "°"
             }
           
@@ -93,28 +94,28 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     }
         
     private func showParisWeather() {
-        WeatherService.shared.getWeather(lat: "48.866667", lon: "2.333333") { (sucess, data) in
+        WeatherService.shared.getWeather(lat: "48.866667", lon: "2.333333") { (sucess, weather) in
             if sucess {
-                self.updateWeatherView(icon: self.parisWeatherImg, temp: self.parisTempLabel, city: self.parisLabel, description: nil)
+                self.updateWeatherView(from: weather!, icon: self.parisWeatherImg, temp: self.parisTempLabel, city: self.parisLabel, description: nil)
             }
 
         }
     }
     private func showNYWeather() {
-        WeatherService.shared.getWeather(lat: "40.7127281", lon: "-74.0060152") { (sucess, data) in
+        WeatherService.shared.getWeather(lat: "40.7127281", lon: "-74.0060152") { (sucess, weather) in
             if sucess {
-                self.updateWeatherView(icon: self.nyWeatherImg, temp: self.nyTempLabel, city: self.nyLabel, description: nil)
+                self.updateWeatherView(from: weather!, icon: self.nyWeatherImg, temp: self.nyTempLabel, city: self.nyLabel, description: nil)
             }
             
         }
     }
     
-    private func updateWeatherView(icon: UIImageView, temp: UILabel, city: UILabel, description: UILabel?) {
-        temp.text = "\(WeatherService.shared.temperatureC)"
-        city.text = "\(WeatherService.shared.currentCity)"
-        description?.text = "\(WeatherService.shared.weatherDescription)"
-        self.icon = WeatherService.shared.weatherIcon
-        icon.image = UIImage(named: "\(self.icon).png")
+    private func updateWeatherView(from data: WeatherObject, icon: UIImageView, temp: UILabel, city: UILabel, description: UILabel?) {
+        temp.text = "\(data.temperature)"
+        city.text = "\(data.cityName)"
+        description?.text = "\(data.weatherDescription)"
+        icon.image = UIImage(named: "\(data.iconIdentifier).png")
+         
         
     }
     

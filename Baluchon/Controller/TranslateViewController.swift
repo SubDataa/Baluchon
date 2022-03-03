@@ -32,13 +32,16 @@ class TranslateViewController: UIViewController {
             TranslateService.shared.entryText = text
             TranslateService.shared.getTranslate() { (sucess, data) in
                 if sucess {
-                    self.textTranslate.text = "\(TranslateService.shared.convertedText)"
+                    self.updateTranslateView(from: data!)
                 }
                
             }
                
         }
     }
-
+    func updateTranslateView(from data: TranslateObject) {
+        self.textTranslate.text = data.translatedText
+        
+    }
 
 }
