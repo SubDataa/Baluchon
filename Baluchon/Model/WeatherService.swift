@@ -67,15 +67,8 @@ class WeatherService {
                 callback(false, nil)
                 return
             }
-            guard let weatherIcon = responseJSON.weather.first?.icon, let weatherDescription = responseJSON.weather.first?.description else  {
-                    
-                callback(false, nil)
-                return
-                }
-                self.temperatureC = Int(responseJSON.main.temp - 273.15)
-                self.currentCity = responseJSON.name
-                self.weatherIcon = weatherIcon
-                self.weatherDescription = weatherDescription
+        
+                self.createWeatherObject(data: responseJSON)
                 callback(true, data)
             }
         }
@@ -87,5 +80,12 @@ class WeatherService {
         return URLRequest(url: URL(string: "https://api.openweathermap.org/data/2.5/weather?" + "lat=" + "\(lat)" + "&lon=" + "\(lon)" + "&appid=b30e3845dbb1cb9ad75ce7da52752392")!)
     }
     
-    
+    func createWeatherObject(data: DatasWeather) {
+        self.temperatureC = Int(data.main.temp - 273.15)
+        self.currentCity = data.name
+        self.weatherIcon = data.weather[0].icon
+        self.weatherDescription = data.weather[0].description
+       
+        
+    }
 }

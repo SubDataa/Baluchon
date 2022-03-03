@@ -11,13 +11,13 @@ import XCTest
 
 
 class WeatherServiceTestCase: XCTestCase {
-    let fakeURL = URL(string: "test")
+    
     func testGetWeatherIfError() {
         // given
         let weatherService = WeatherService(session: URLSessionFake(data: nil, response: nil, error: WeatherFakeResponseData.error))
         //When
        
-        weatherService.getWeather(url: fakeURL!) { (data) in
+        weatherService.getWeather(lat: "String", lon: "")  { (sucess, data) in
         //then
             XCTAssertNil(data)
             
