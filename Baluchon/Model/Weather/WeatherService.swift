@@ -7,16 +7,14 @@
 
 import Foundation
 
-
 class WeatherService {
     // MARK: - Singleton
     static var shared = WeatherService()
     private init() {}
     // MARK: - VARIABLE FOR API CALL
-    var session = URLSession(configuration: .default)
     var task: URLSessionDataTask?
-
     
+    private var session = URLSession(configuration: .default)
     init(session: URLSession) {
         self.session = session
     }
@@ -28,25 +26,25 @@ class WeatherService {
         //task?.cancel()
         task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
-            guard let data = data, error == nil else {
-                callback(false, nil)
-                return
-            }
-            guard  let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                callback(false, nil)
-                return
-            }
-            guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data) else {
-                callback(false, nil)
-                return
-            }
-        
-               let weather = self.createWeatherObject(data: responseJSON)
+                guard let data = data, error == nil else {
+                    callback(false, nil)
+                    return
+                }
+                guard  let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    callback(false, nil)
+                    return
+                }
+                guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data) else {
+                    callback(false, nil)
+                    return
+                }
+                
+                let weather = self.createWeatherObject(data: responseJSON)
                 callback(true, weather)
             }
         }
         task?.resume()
-   
+        
     }
     
     func createWeatherURL(lat: String, lon: String) -> URLRequest{
@@ -58,7 +56,7 @@ class WeatherService {
         let city = data.name
         let icon = data.weather[0].icon
         let description = data.weather[0].description
-       
+        
         return WeatherObject(temperature: temp, cityName: city, weatherDescription: description, iconIdentifier: icon)
     }
 }

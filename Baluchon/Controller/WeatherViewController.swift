@@ -10,10 +10,10 @@ import CoreLocation
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
-    // MARK: - VARIABLE FOR UI & CLASS INSTANCE 
+    // MARK: - VARIABLE FOR UI & CLASS INSTANCE
     private let locationManager = CLLocationManager()
-   
- 
+    
+    
     private var icon = ""
     private var firstLocation: CLLocation?
     private var latitude = ""
@@ -52,14 +52,14 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - OPEN ALERT WHEN USER DECLINE LOCATION
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard status == .denied else { return }
-            let alertController = UIAlertController(title: "Location Permission Required", message: "We need to access your location to run our application. Please authorize the location in the settings", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Settings", style: .default, handler: {(cAlertAction) in
-                    UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-                })
-                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-                alertController.addAction(cancelAction)
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
+        let alertController = UIAlertController(title: "Location Permission Required", message: "We need to access your location to run our application. Please authorize the location in the settings", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Settings", style: .default, handler: {(cAlertAction) in
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
         
     }
     
@@ -88,17 +88,17 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 self.updateWeatherView(from: weather!, icon: self.weatherIcon, temp: self.temperatureText, city: self.cityText, description: self.weatherDescription)
                 self.degreeText.text = "°"
             }
-          
+            
         }
         
     }
-        
+    
     private func showParisWeather() {
         WeatherService.shared.getWeather(lat: "48.866667", lon: "2.333333") { (sucess, weather) in
             if sucess {
                 self.updateWeatherView(from: weather!, icon: self.parisWeatherImg, temp: self.parisTempLabel, city: self.parisLabel, description: nil)
             }
-
+            
         }
     }
     private func showNYWeather() {
@@ -115,7 +115,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         city.text = "\(data.cityName)"
         description?.text = "\(data.weatherDescription)"
         icon.image = UIImage(named: "\(data.iconIdentifier).png")
-         
+        
         
     }
     

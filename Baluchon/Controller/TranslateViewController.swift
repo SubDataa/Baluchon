@@ -8,7 +8,7 @@
 import UIKit
 
 class TranslateViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
@@ -21,7 +21,7 @@ class TranslateViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
     
     @IBOutlet weak var textToTranslate: UITextField!
     
@@ -34,14 +34,14 @@ class TranslateViewController: UIViewController {
                 if sucess {
                     self.updateTranslateView(from: data!)
                 }
-               
+                
             }
-               
+            
         }
     }
     func updateTranslateView(from data: TranslateObject) {
         self.textTranslate.text = data.translatedText
         
     }
-
+    
 }

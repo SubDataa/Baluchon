@@ -32,10 +32,10 @@ class CurrencyService {
                     callback(false, nil)
                     return
                 }
-                            
+                
                 let currency = self.createCurrencyObject(data: responseJSON)
                 callback(true, currency)
-                        }
+            }
         }
         task?.resume()
     }

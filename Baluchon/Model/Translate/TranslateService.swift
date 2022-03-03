@@ -36,10 +36,10 @@ class TranslateService {
                     callback(false, nil)
                     return
                 }
-                            let translate = createTranslateObject(data: responseJSON)
-                            callback(true, translate)
-                        }
-                    }
+                let translate = createTranslateObject(data: responseJSON)
+                callback(true, translate)
+            }
+        }
         
         task?.resume()
     }

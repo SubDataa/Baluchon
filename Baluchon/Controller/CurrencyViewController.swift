@@ -8,9 +8,9 @@
 import UIKit
 
 class ConvertViewController: UIViewController {
-
     
-
+    
+    
     //
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +18,8 @@ class ConvertViewController: UIViewController {
         textField.layer.borderWidth = CGFloat(1.0)
         textField.layer.borderColor = UIColor.red.cgColor
         textField.layer.cornerRadius = 10.0
-    
-}
+        
+    }
     
     @IBOutlet weak var result: UILabel!
     
@@ -27,29 +27,29 @@ class ConvertViewController: UIViewController {
     
     
     @IBAction func ButtonConvertUSDToEUR(_ sender: Any) {
-       
+        
         if let text = textField.text {
-           
+            
             CurrencyService.shared.getCurrency(from: "from=USD", to: "&to=EUR", amount: "&amount=" + text) { (success, data) in
                 if success {
                     self.updateCurrencyView(from: data!)
                 }
                 
             }
-               
+            
         }
         
     }
     @IBAction func ButtonConvertEURToUSD(_ sender: Any) {
         if let text = textField.text {
-           
+            
             CurrencyService.shared.getCurrency(from: "from=EUR", to: "&to=USD", amount: "&amount=" + text) { (sucess, data) in
                 if sucess {
                     self.updateCurrencyView(from: data!)
                 }
                 
             }
-               
+            
         }
         
     }
@@ -57,5 +57,5 @@ class ConvertViewController: UIViewController {
         self.result.text = data.result
         
     }
-
+    
 }
