@@ -7,49 +7,22 @@
 
 import Foundation
 
-// MARK: - DECODE JSON
-struct DatasWeather: Codable {
-    
-    let coord : Coord
-    let weather : [Weather]
-    let main : Main
-    let name : String
-
-    struct Coord : Codable {
-        let lon : Double
-        let lat : Double
-    }
-
-    struct Weather : Codable {
-        let description : String
-        let icon : String
-    }
-    
-    struct Main : Codable {
-        let temp : Double
-    } 
-}
 
 class WeatherService {
     // MARK: - Singleton
     static var shared = WeatherService()
     private init() {}
     // MARK: - VARIABLE FOR API CALL
-    var temperatureC = 0
-    var currentCity = ""
-    var weatherIcon = ""
-    var weatherDescription = ""
     var session = URLSession(configuration: .default)
     var task: URLSessionDataTask?
-    var urlAPI = "https://api.openweathermap.org/data/2.5/weather?"
-    var key = "&appid=b30e3845dbb1cb9ad75ce7da52752392"
+
     
     init(session: URLSession) {
         self.session = session
     }
     
     // MARK: - API CONFIGURATION
-    func getWeather(lat: String, lon: String, callback: @escaping (Bool, Data?) -> Void)  {
+    func getWeather(lat: String, lon: String, callback: @escaping (Bool, WeatherObject?) -> Void)  {
         var request = createWeatherURL(lat: lat, lon: lon)
         request.httpMethod = "GET"
         //task?.cancel()
@@ -63,13 +36,13 @@ class WeatherService {
                 callback(false, nil)
                 return
             }
-            guard let responseJSON = try? JSONDecoder().decode(DatasWeather.self, from: data) else {
+            guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data) else {
                 callback(false, nil)
                 return
             }
         
-                self.createWeatherObject(data: responseJSON)
-                callback(true, data)
+               let weather = self.createWeatherObject(data: responseJSON)
+                callback(true, weather)
             }
         }
         task?.resume()
@@ -80,12 +53,12 @@ class WeatherService {
         return URLRequest(url: URL(string: "https://api.openweathermap.org/data/2.5/weather?" + "lat=" + "\(lat)" + "&lon=" + "\(lon)" + "&appid=b30e3845dbb1cb9ad75ce7da52752392")!)
     }
     
-    func createWeatherObject(data: DatasWeather) {
-        self.temperatureC = Int(data.main.temp - 273.15)
-        self.currentCity = data.name
-        self.weatherIcon = data.weather[0].icon
-        self.weatherDescription = data.weather[0].description
+    func createWeatherObject(data: WeatherData) -> WeatherObject {
+        let temp = "\(Int(data.main.temp - 273.15))"
+        let city = data.name
+        let icon = data.weather[0].icon
+        let description = data.weather[0].description
        
-        
+        return WeatherObject(temperature: temp, cityName: city, weatherDescription: description, iconIdentifier: icon)
     }
 }
