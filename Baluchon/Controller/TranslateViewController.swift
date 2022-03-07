@@ -8,7 +8,7 @@
 import UIKit
 
 class TranslateViewController: UIViewController {
-    
+    //MARK: - DARK MODE SETTING & UI 
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
@@ -22,11 +22,11 @@ class TranslateViewController: UIViewController {
     }
     
     
-    
+    // MARK: - VARIABLE FOR UI 
     @IBOutlet weak var textToTranslate: UITextField!
-    
     @IBOutlet weak var textTranslate: UITextField!
     
+    //MARK: - API CALL
     @IBAction func translateButton(_ sender: Any) {
         if let text = textToTranslate.text {
             TranslateService.shared.entryText = text
@@ -39,6 +39,7 @@ class TranslateViewController: UIViewController {
             
         }
     }
+    //MARK: - UPDATE TRANSLATION VIEW
     func updateTranslateView(from data: TranslateObject) {
         self.textTranslate.text = data.translatedText
         

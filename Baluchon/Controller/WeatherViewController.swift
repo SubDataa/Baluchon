@@ -81,7 +81,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    //MARK: - API CALL
+    //MARK: - API CALL FOR LOCATION
     private func showWeather() {
         WeatherService.shared.getWeather(lat: latitude, lon: longitude) { (sucess, weather) in
             if sucess {
@@ -92,7 +92,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
-    
+    //MARK: - API CALL FOR PARIS
     private func showParisWeather() {
         WeatherService.shared.getWeather(lat: "48.866667", lon: "2.333333") { (sucess, weather) in
             if sucess {
@@ -101,6 +101,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             
         }
     }
+    //MARK: - API CALL FOR NY
     private func showNYWeather() {
         WeatherService.shared.getWeather(lat: "40.7127281", lon: "-74.0060152") { (sucess, weather) in
             if sucess {
@@ -109,7 +110,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             
         }
     }
-    
+    //MARK: - UPDATE WEATHER VIEW
     private func updateWeatherView(from data: WeatherObject, icon: UIImageView, temp: UILabel, city: UILabel, description: UILabel?) {
         temp.text = "\(data.temperature)"
         city.text = "\(data.cityName)"

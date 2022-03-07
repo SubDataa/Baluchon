@@ -11,9 +11,9 @@ class WeatherService {
     // MARK: - Singleton
     static var shared = WeatherService()
     private init() {}
-    // MARK: - VARIABLE FOR API CALL
     var task: URLSessionDataTask?
     
+    // MARK: - INJECT DEPENDENCY
     private var session = URLSession(configuration: .default)
     init(session: URLSession) {
         self.session = session
@@ -47,10 +47,11 @@ class WeatherService {
         
     }
     
+    // MARK: - CREATE URL FOR API CALL
     func createWeatherURL(lat: String, lon: String) -> URLRequest{
         return URLRequest(url: URL(string: "https://api.openweathermap.org/data/2.5/weather?" + "lat=" + "\(lat)" + "&lon=" + "\(lon)" + "&appid=b30e3845dbb1cb9ad75ce7da52752392")!)
     }
-    
+    // MARK: - CREATE TRANSLATION OBJECT
     func createWeatherObject(data: WeatherData) -> WeatherObject {
         let temp = "\(Int(data.main.temp - 273.15))"
         let city = data.name
