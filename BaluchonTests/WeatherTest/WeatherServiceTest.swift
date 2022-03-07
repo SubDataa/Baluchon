@@ -10,9 +10,35 @@ import XCTest
 
 class WeatherServiceTestCase: XCTestCase {
     
+    var weatherService: WeatherService!
+    var expectation: XCTestExpectation!
+    let apiURL = URL(string: "https://google.com")!
+    
+    override func setUp() {
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = WeatherFakeResponseData.responseOK!
+            let error: Error? = nil
+            let data: Data? = WeatherFakeResponseData.weatherIncorrectData
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession.init(configuration: configuration)
+        weatherService = WeatherService(session: urlSession)
+    }
+    
     func testGetWeatherShouldPostFailedCallbackIfError() {
         // given
-        let weatherService = WeatherService(session: URLSessionFake(data: nil, response: nil, error: WeatherFakeResponseData.error))
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = WeatherFakeResponseData.responseKO!
+            let error: Error? = WeatherFakeResponseData.error
+            let data: Data? = nil
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let session = URLSession(configuration: configuration)
+        let weatherService = WeatherService(session: session)
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         weatherService.getWeather(lat: "", lon: "") { (success, weather) in
@@ -27,7 +53,16 @@ class WeatherServiceTestCase: XCTestCase {
     
     func testGetWeatherShouldPostFailedCallbackIfNoData() {
         // given
-        let weatherService = WeatherService(session: URLSessionFake(data: nil, response: nil, error: nil))
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = WeatherFakeResponseData.responseKO!
+            let error: Error? = nil
+            let data: Data? = nil
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let session = URLSession(configuration: configuration)
+        let weatherService = WeatherService(session: session)
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         weatherService.getWeather(lat: "", lon: "") { (success, weather) in
@@ -41,7 +76,16 @@ class WeatherServiceTestCase: XCTestCase {
     }
     func testGetWeatherShouldPostFailedCallbackIfIncorrectResponse() {
         // given
-        let weatherService = WeatherService(session: URLSessionFake(data: WeatherFakeResponseData.weatherCorrectData, response: WeatherFakeResponseData.responseKO, error: nil))
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = WeatherFakeResponseData.responseKO!
+            let error: Error? = nil
+            let data: Data? = WeatherFakeResponseData.weatherCorrectData
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let session = URLSession(configuration: configuration)
+        let weatherService = WeatherService(session: session)
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         weatherService.getWeather(lat: "", lon: "") { (success, weather) in
@@ -55,7 +99,18 @@ class WeatherServiceTestCase: XCTestCase {
     }
     func testGetWeatherShouldPostFailedCallbackIfIncorrectData() {
         // given
-        let weatherService = WeatherService(session: URLSessionFake(data: WeatherFakeResponseData.weatherIncorrectData, response: WeatherFakeResponseData.responseOK, error: nil))
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = WeatherFakeResponseData.responseOK!
+            let error: Error? = nil
+            let data: Data? = WeatherFakeResponseData.weatherIncorrectData
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let session = URLSession(configuration: configuration)
+        let weatherService = WeatherService(session: session)
+        
+        
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         weatherService.getWeather(lat: "", lon: "") { (success, weather) in
@@ -70,7 +125,18 @@ class WeatherServiceTestCase: XCTestCase {
     
     func testGetWeatherShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         // given
-        let weatherService = WeatherService(session: URLSessionFake(data: WeatherFakeResponseData.weatherCorrectData, response: WeatherFakeResponseData.responseOK, error: nil))
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = WeatherFakeResponseData.responseOK!
+            let error: Error? = nil
+            let data: Data? = WeatherFakeResponseData.weatherCorrectData
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let session = URLSession(configuration: configuration)
+        let weatherService = WeatherService(session: session)
+        
+        
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         weatherService.getWeather(lat: "", lon: "") { (success, weather) in
@@ -79,7 +145,7 @@ class WeatherServiceTestCase: XCTestCase {
             XCTAssertTrue(success)
             XCTAssertNotNil(weather)
             XCTAssertEqual(name, weather?.cityName)
-
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)

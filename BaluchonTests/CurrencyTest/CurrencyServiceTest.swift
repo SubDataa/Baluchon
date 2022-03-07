@@ -10,10 +10,36 @@ import XCTest
 @testable import Baluchon
 
 class CurrencyServiceTestCase: XCTestCase {
+   
+    var currencyService: CurrencyService!
+    var expectation: XCTestExpectation!
+    let apiURL = URL(string: "https://google.com")!
+    
+    override func setUp() {
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = CurrencyFakeResponseData.responseOK!
+            let error: Error? = nil
+            let data: Data? = CurrencyFakeResponseData.currencyIncorrectData
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession.init(configuration: configuration)
+        currencyService = CurrencyService(session: urlSession)
+    }
     
     func testGetCurrencyShouldPostFailedCallbackIfError() {
         // given
-        let currencyService = CurrencyService(session: URLSessionFake(data: nil, response: nil, error: CurrencyFakeResponseData.error))
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = CurrencyFakeResponseData.responseOK!
+            let error: Error? = CurrencyFakeResponseData.error
+            let data: Data? = nil
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession.init(configuration: configuration)
+        currencyService = CurrencyService(session: urlSession)
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         currencyService.getCurrency(from: "String", to: "String", amount: "") { (success, currency) in
@@ -28,7 +54,16 @@ class CurrencyServiceTestCase: XCTestCase {
     
     func testGetCurrencyShouldPostFailedCallbackIfNoData() {
         // given
-        let currencyService = CurrencyService(session: URLSessionFake(data: nil, response: nil, error: nil))
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = CurrencyFakeResponseData.responseOK!
+            let error: Error? = nil
+            let data: Data? = nil
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession.init(configuration: configuration)
+        currencyService = CurrencyService(session: urlSession)
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         currencyService.getCurrency(from: "String", to: "String", amount: "") { (success, currency) in
@@ -42,7 +77,18 @@ class CurrencyServiceTestCase: XCTestCase {
     }
     func testGetCurrencyShouldPostFailedCallbackIfIncorrectResponse() {
         // given
-        let currencyService = CurrencyService(session: URLSessionFake(data: CurrencyFakeResponseData.currencyCorrectData, response: CurrencyFakeResponseData.responseKO, error: nil))
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = CurrencyFakeResponseData.responseKO!
+            let error: Error? = nil
+            let data: Data? = CurrencyFakeResponseData.currencyCorrectData
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession.init(configuration: configuration)
+        currencyService = CurrencyService(session: urlSession)
+        
+      
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         currencyService.getCurrency(from: "String", to: "String", amount: "") { (success, currency) in
@@ -56,7 +102,18 @@ class CurrencyServiceTestCase: XCTestCase {
     }
     func testGetCurrencyShouldPostFailedCallbackIfIncorrectData() {
         // given
-        let currencyService = CurrencyService(session: URLSessionFake(data: CurrencyFakeResponseData.currencyIncorrectData, response: CurrencyFakeResponseData.responseOK, error: nil))
+
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = CurrencyFakeResponseData.responseOK!
+            let error: Error? = nil
+            let data: Data? = CurrencyFakeResponseData.currencyIncorrectData
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession.init(configuration: configuration)
+        currencyService = CurrencyService(session: urlSession)
+
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         currencyService.getCurrency(from: "String", to: "String", amount: "") { (success, currency) in
@@ -71,7 +128,17 @@ class CurrencyServiceTestCase: XCTestCase {
     
     func testGetCurrencyShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         // given
-        let currencyService = CurrencyService(session: URLSessionFake(data: CurrencyFakeResponseData.currencyCorrectData, response: CurrencyFakeResponseData.responseOK, error: nil))
+        MockURLProtocol.requestHandler = { request in
+            let response: HTTPURLResponse = CurrencyFakeResponseData.responseOK!
+            let error: Error? = nil
+            let data: Data? = CurrencyFakeResponseData.currencyCorrectData
+            return (response, data, error)
+        }
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession.init(configuration: configuration)
+        currencyService = CurrencyService(session: urlSession)
+        
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         currencyService.getCurrency(from: "String", to: "String", amount: "") { (success, currency) in
