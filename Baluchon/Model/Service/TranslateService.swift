@@ -17,6 +17,7 @@ class TranslateService {
     // MARK: - VARIABLE FOR API CALL
     var entryText = ""
     var convertedText = ""
+    
     // MARK: - INJECT DEPENDENCY
     private var session = URLSession(configuration: .default)
     init(session: URLSession) {

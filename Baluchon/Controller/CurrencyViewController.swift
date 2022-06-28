@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConvertViewController: UIViewController {
+class ConvertViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: - DARK MODE SETTING & UI
@@ -17,7 +17,11 @@ class ConvertViewController: UIViewController {
         textField.layer.borderWidth = CGFloat(1.0)
         textField.layer.borderColor = UIColor.red.cgColor
         textField.layer.cornerRadius = 10.0
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
         
+        textField.delegate = self
     }
     // MARK: - VARIABLE FOR UI
     @IBOutlet weak var result: UILabel!
@@ -47,4 +51,19 @@ class ConvertViewController: UIViewController {
     func updateCurrencyView(from data: CurrencyObject) {
         self.result.text = data.result
     }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+      }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+                if textField == textField{
+                let allowingChars = "0123456789,."
+                let numberOnly = NSCharacterSet.init(charactersIn: allowingChars).inverted
+                let validString = string.rangeOfCharacter(from: numberOnly) == nil
+                       return validString
+                 }
+            return true
+            }
 }

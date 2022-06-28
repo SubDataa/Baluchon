@@ -74,6 +74,7 @@ class WeatherServiceTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
         
     }
+    
     func testGetWeatherShouldPostFailedCallbackIfIncorrectResponse() {
         // given
         MockURLProtocol.requestHandler = { request in

@@ -24,7 +24,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak private var temperatureText: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var weatherDescription: UILabel!
-    
     @IBOutlet weak var parisLabel: UILabel!
     @IBOutlet weak var parisTempLabel: UILabel!
     @IBOutlet weak var nyTempLabel: UILabel!
@@ -45,8 +44,22 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         overrideUserInterfaceStyle = .dark
-        showParisWeather()
-        showNYWeather()
+        
+        
+       
+        
+    }
+    
+    
+   override func viewDidAppear(_ animated: Bool) {
+        if InternetConnectionManager.isConnectedToNetwork(){
+            print("Connected")
+            showParisWeather()
+            showNYWeather()
+        }else{
+            print("Not Connected")
+            showAlert()
+        }
     }
     
     //MARK: - OPEN ALERT WHEN USER DECLINE LOCATION
@@ -118,6 +131,17 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         icon.image = UIImage(named: "\(data.iconIdentifier).png")
         
         
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "No internet", message: "You must have internet to use your app", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: {(cAlertAction) in
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
     }
     
 }

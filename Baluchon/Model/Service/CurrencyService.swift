@@ -53,7 +53,7 @@ class CurrencyService {
         return URLRequest(url: URL(string: "https://api.exchangerate.host/convert?" +  "\(from)" + "\(to)" + "\(amount)")!)
     }
     
-    // MARK: - CREATE TRANSLATION OBJECT
+    // MARK: - CREATE CURRENCY OBJECT
     func createCurrencyObject(data: CurrencyData) -> CurrencyObject {
         let formatedResult = String(format:"%.2f", data.result)
         let result = formatedResult

@@ -19,9 +19,14 @@ class TranslateViewController: UIViewController {
         textTranslate.layer.borderColor = UIColor.red.cgColor
         textTranslate.layer.cornerRadius = 10.0
         // Do any additional setup after loading the view.
+        
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
     }
     
-    
+   
     // MARK: - VARIABLE FOR UI 
     @IBOutlet weak var textToTranslate: UITextField!
     @IBOutlet weak var textTranslate: UITextField!
@@ -43,6 +48,15 @@ class TranslateViewController: UIViewController {
     func updateTranslateView(from data: TranslateObject) {
         self.textTranslate.text = data.translatedText
         
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+      }
+    
+    @IBAction func done(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        translateButton((Any).self)
     }
     
 }

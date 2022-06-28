@@ -25,6 +25,7 @@
 		634A60EA27D1127C00E2B0F2 /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A60E927D1127C00E2B0F2 /* CurrencyData.swift */; };
 		634A60EC27D112F000E2B0F2 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A60EB27D112F000E2B0F2 /* Translate.swift */; };
 		634A60EE27D114F000E2B0F2 /* TranslateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A60ED27D114F000E2B0F2 /* TranslateData.swift */; };
+		634E463C286B2D9E00512D6C /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E463B286B2D9E00512D6C /* Reach.swift */; };
 		635FAC7127849F68004D2218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635FAC7027849F68004D2218 /* Assets.xcassets */; };
 		637EE90227D6569000DA542A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637EE90127D6569000DA542A /* MockURLProtocol.swift */; };
 		63B3172C2784A793006FD977 /* coolvetica rg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63B3172B2784A793006FD977 /* coolvetica rg.otf */; };
@@ -82,6 +83,7 @@
 		634A60E927D1127C00E2B0F2 /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
 		634A60EB27D112F000E2B0F2 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		634A60ED27D114F000E2B0F2 /* TranslateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateData.swift; sourceTree = "<group>"; };
+		634E463B286B2D9E00512D6C /* Reach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		635FAC7027849F68004D2218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		637EE90127D6569000DA542A /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		63B3172B2784A793006FD977 /* coolvetica rg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolvetica rg.otf"; sourceTree = "<group>"; };
@@ -147,7 +149,6 @@
 		633C121B275503A1006CA6D7 /* Baluchon */ = {
 			isa = PBXGroup;
 			children = (
-				634A603C27D16B5800D0BA0D /* Service */,
 				63B847982785E6FC00A9F572 /* Fonts */,
 				633C125627550979006CA6D7 /* Controller */,
 				633C125527550971006CA6D7 /* View */,
@@ -183,9 +184,11 @@
 		633C125427550965006CA6D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				634A603C27D16B5800D0BA0D /* Service */,
 				634A60E627D10FA300E2B0F2 /* Translate */,
 				634A60E527D10F9A00E2B0F2 /* Currency */,
 				634A60E227D10E4900E2B0F2 /* Weather */,
+				634E463B286B2D9E00512D6C /* Reach.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				634A60E427D10E6D00E2B0F2 /* WeatherData.swift in Sources */,
 				631146F427BCEBDE00FCC596 /* TranslateService.swift in Sources */,
 				63E352FC27D0DB9C00A833DC /* Weather.swift in Sources */,
+				634E463C286B2D9E00512D6C /* Reach.swift in Sources */,
 				633C124D2755056E006CA6D7 /* TranslateViewController.swift in Sources */,
 				633C124F275505D1006CA6D7 /* CurrencyViewController.swift in Sources */,
 				634A60EC27D112F000E2B0F2 /* Translate.swift in Sources */,
@@ -623,6 +627,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T2L78J4N3Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Baluchon/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We’ll use this to personalize your app experience";
@@ -652,6 +657,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T2L78J4N3Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Baluchon/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We’ll use this to personalize your app experience";
